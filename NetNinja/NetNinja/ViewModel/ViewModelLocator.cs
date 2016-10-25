@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using NetNinja.ViewModel;
 
 namespace NetNinja.Views
 {
@@ -28,16 +29,16 @@ namespace NetNinja.Views
                 //Hier registreren we een SongListViewModel
                 //Waarom doen we dit? Denk hier alvast over na.
                 //Het antwoord op deze vraag komt over een tijdje.
-                SimpleIoc.Default.Register<SongListViewModel>();
+                SimpleIoc.Default.Register<StoreViewModel>();
             }
 
-            public SongListViewModel SongList
+ /*           public EquipmentManagementViewModel EquipmentList
             {
                 get
                 {
                     //De service locator gebruikt een 'singleton' patroon. 
                     //Het maakt niet uit hoevaak je een SongList aanvraagt, je krijgt altijd het zelfde object terug. 
-                    return ServiceLocator.Current.GetInstance<SongListViewModel>();
+                    return ServiceLocator.Current.GetInstance<EquipmentManagementViewModel>();
                 }
             }
 
@@ -59,10 +60,9 @@ namespace NetNinja.Views
                     return null;
                 }
             }
-
+  */
             public static void Cleanup()
             {
             }
         }
     }
-}
