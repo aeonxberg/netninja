@@ -39,6 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratedCode\Boots.cs" />
+    <Compile Include="GeneratedCode\Chest.cs" />
+    <Compile Include="GeneratedCode\Equipment.cs" />
+    <Compile Include="GeneratedCode\Head.cs" />
+    <Compile Include="GeneratedCode\Legs.cs" />
+    <Compile Include="GeneratedCode\Ninja.cs" />
+    <Compile Include="GeneratedCode\Shoulder.cs" />
+    <Compile Include="GeneratedCode\Store.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

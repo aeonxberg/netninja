@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetNinja", "NetNinja\NetNin
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{A13911F8-C4D4-47A0-94C9-9A53B40AA732}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingProject1Lib", "ModelingProject1Lib\ModelingProject1Lib.csproj", "{1E8029C7-331C-4CF5-921D-CF456C71C905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A13911F8-C4D4-47A0-94C9-9A53B40AA732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A13911F8-C4D4-47A0-94C9-9A53B40AA732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A13911F8-C4D4-47A0-94C9-9A53B40AA732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E8029C7-331C-4CF5-921D-CF456C71C905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8029C7-331C-4CF5-921D-CF456C71C905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8029C7-331C-4CF5-921D-CF456C71C905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8029C7-331C-4CF5-921D-CF456C71C905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
