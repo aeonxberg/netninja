@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetNinja", "NetNinja\NetNinja.csproj", "{E402A145-2800-4001-B51D-0D8C3B389519}"
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{A13911F8-C4D4-47A0-94C9-9A53B40AA732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingProject1Lib", "ModelingProject1Lib\ModelingProject1Lib.csproj", "{1E8029C7-331C-4CF5-921D-CF456C71C905}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DKD_netninja", "DKD_netninja\DKD_netninja.modelproj", "{E8D37D91-927B-493E-A24A-BA1C0ED68450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninja.domain", "Ninja.domain\Ninja.domain.csproj", "{6EB446F5-516A-494B-A1AC-500CD32980E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{A13911F8-C4D4-47A0-94C9-9A53B40AA732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A13911F8-C4D4-47A0-94C9-9A53B40AA732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A13911F8-C4D4-47A0-94C9-9A53B40AA732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E8029C7-331C-4CF5-921D-CF456C71C905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8029C7-331C-4CF5-921D-CF456C71C905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8029C7-331C-4CF5-921D-CF456C71C905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8029C7-331C-4CF5-921D-CF456C71C905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D37D91-927B-493E-A24A-BA1C0ED68450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D37D91-927B-493E-A24A-BA1C0ED68450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D37D91-927B-493E-A24A-BA1C0ED68450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D37D91-927B-493E-A24A-BA1C0ED68450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EB446F5-516A-494B-A1AC-500CD32980E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB446F5-516A-494B-A1AC-500CD32980E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB446F5-516A-494B-A1AC-500CD32980E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB446F5-516A-494B-A1AC-500CD32980E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

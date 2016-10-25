@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="23793704-ff9f-48c0-946b-cc139fd6ef03" ChangeDateTime="10/25/2016 11:17:32">
+    <Property Name="ElementName" Value="[dbo].[Ninja].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Ninja]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Agility" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="877d5158-5e6c-455f-a3a6-35fa4066f543" ChangeDateTime="10/25/2016 11:17:55">
+    <Property Name="ElementName" Value="[dbo].[Ninja].[Agility]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Ninja]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e9e8a05f-f762-4dfa-b605-869525ad42d9" ChangeDateTime="10/25/2016 11:22:54">
+    <Property Name="ElementName" Value="[dbo].[Equipment].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Equipment]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+</Operations>
