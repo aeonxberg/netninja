@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="35e6ac87-0b74-483a-879b-c6864a60fb10" name="UMLClassDiagram1" linkedPackageId="0d3f4cca-f1ce-4b9b-a71e-1eb9a2dbbd0e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="f74477c9-1ac3-4602-af9e-a1dffa85f34c">
-      <profileInstance Id="eca2ea83-8bb7-4c1b-b1fe-cea1166f509c" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="83a61730-7088-4b30-afa7-b48357b07534">
-      <profileInstance Id="8fca1967-fa93-47fb-8741-af8054d72063" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="0afce210-3ce7-41ca-9b02-5f0446ecc529" name="Equipment" isAbstract="true" isLeaf="false" isActiveClass="false">
@@ -25,10 +11,10 @@
               <referencedTypeMoniker Id="92fd674f-1f98-4a36-83e0-2b0f3a1e38aa" LastKnownName="Int" />
             </type_NamedElement>
           </property>
-          <property Id="0f0e6bd5-7153-4177-9414-9412cec885e3" name="EqpImage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="0f0e6bd5-7153-4177-9414-9412cec885e3" name="Image" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="7848b118-ff7f-41e6-8921-de826474915c" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="d952ad5c-d5f0-45cc-8887-2680c31feac7" LastKnownName="URL" />
+              <referencedTypeMoniker Id="6aa6228a-5e75-4294-84e4-7244ad880731" LastKnownName="URL" />
             </type_NamedElement>
           </property>
           <property Id="2aa94b3e-5cfe-43b0-8791-2fcfab902419" name="Gold" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -48,6 +34,9 @@
             <type_NamedElement>
               <referencedTypeMoniker Id="74d89a42-3e3f-49f2-863d-b2306118b541" LastKnownName="Int" />
             </type_NamedElement>
+          </property>
+          <property Id="b6990b4d-9337-4940-ba2b-502f9f2672c6" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="64f56044-ba6a-423f-9e7c-24552f5d5f54" />
           </property>
         </ownedAttributesInternal>
       </class>
@@ -160,6 +149,60 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="3c2871df-565d-442f-a57b-a4dd2dd4521a" name="Ninja" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="17edbcc4-d45d-4036-bcee-75474407299f" />
+        <targetEnds>
+          <association Id="6189c8d6-06cb-4291-8b00-85fe0f3016ea" isDerived="false" sourceEndRoleName="Ninja" targetEndRoleName="Equipment" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0afce210-3ce7-41ca-9b02-5f0446ecc529" LastKnownName="Equipment" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2d4bec53-2393-41dc-bb72-3e7f7c4dcd23" name="Ninja" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="161b8596-5574-4a93-8b45-eeb698366b75" name="Lower" value="0">
+                      <elementDefinition Id="d38c2c7f-ca18-41af-970e-055302640db5" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="29786c6e-9773-4a20-9d9b-68cf9a757722" name="Upper" value=".1">
+                      <elementDefinition Id="67c1e15a-259c-4f9d-abf6-66fc695b79be" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="287acade-f415-401f-930b-8979283247d3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="db1c6d6a-92ad-4763-86d0-705cba3b5ede" name="Equipment" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="004c2d72-0b29-46c1-a9e5-341a821fb41c" name="Lower" value="0">
+                      <elementDefinition Id="074e7f74-e3d3-40ba-bbc2-7419321459d8" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="9c3a223f-f160-44e2-a0b4-4e91bc343f5f" name="Upper" value=".n">
+                      <elementDefinition Id="d6046139-9722-4029-9291-44dceb5e68de" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="f8d547fc-edf7-4455-9a09-a71c4300ec4d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9a52112b-1922-4bb6-aa06-215edd9fbaa6" />
+          </association>
+          <association Id="6fea2f9e-4a9a-4673-b46b-5c65905f6b43" isDerived="false" sourceEndRoleName="Ninja" targetEndRoleName="Store" isLeaf="false" isAbstract="false">
+            <classMoniker Id="96bfdfa3-e5a5-4647-8c3d-c791dae07cec" LastKnownName="Store" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="119eba7a-99cb-4a6e-a53a-50649518b2bb" name="Ninja" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="118bdbe0-031b-4f01-a486-a9e89d6db0ba" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="df3c677e-694c-459e-a0f8-7af1c5befbae" name="Store" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="526b78b4-a5fe-4cc3-9a65-4534612be71a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="006978c3-ed50-4588-9bc8-067764c1dcdb" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="bf10a6db-ba39-4849-9a86-c08a0c593f38" name="currentHead" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f2d8c6b5-a16a-4c3e-95dc-f7177d182ca0" />
@@ -264,7 +307,7 @@
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="2111a5db-73c5-4f7f-9ac9-09fa3dad7418" name="Upper" value=".n">
+                    <literalString Id="2111a5db-73c5-4f7f-9ac9-09fa3dad7418" name="Upper" value=".1">
                       <elementDefinition Id="35fc56db-1cef-4cf5-a985-1c857d4e5f9e" />
                     </literalString>
                   </upperValueInternal>
@@ -279,7 +322,7 @@
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="e36c60dd-412a-441b-8d47-df7d1d9a85ba" name="Upper" value=".1">
+                    <literalString Id="e36c60dd-412a-441b-8d47-df7d1d9a85ba" name="Upper" value=".n">
                       <elementDefinition Id="7759324d-2239-4c3a-899e-4e03dcb0a048" />
                     </literalString>
                   </upperValueInternal>
@@ -297,12 +340,6 @@
               <referencedTypeMoniker Id="92fd674f-1f98-4a36-83e0-2b0f3a1e38aa" LastKnownName="Int" />
             </type_NamedElement>
           </property>
-          <property Id="a66a1a41-5adc-4ebd-bb72-d1f7a7ab7017" name="ActiveNinja" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="6756fbf6-edec-4cf4-86a2-90fb3cca5724" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="a756d716-195b-4e12-b369-7fb7df958f7c" LastKnownName="Ninja" />
-            </type_NamedElement>
-          </property>
           <property Id="b11fd539-c37e-4329-b084-daecd939fe34" name="EquipmentCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="753c5e6f-7070-402b-8730-c72b12e3bbb3" />
             <type_NamedElement>
@@ -313,17 +350,31 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="a756d716-195b-4e12-b369-7fb7df958f7c" name="Ninja" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Ninja">
-        <elementDefinition Id="17edbcc4-d45d-4036-bcee-75474407299f" />
+      <referencedType Id="75040f02-9a70-413f-b6ac-0b02a762a9df" name="Dictionary&lt;String,List &gt;" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;String,List &gt;">
+        <elementDefinition Id="5582bcbd-b6ec-4323-807f-9c73a42ef3da" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="75040f02-9a70-413f-b6ac-0b02a762a9df" name="Dictionary&lt;String,List &gt;" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;String,List &gt;">
-        <elementDefinition Id="5582bcbd-b6ec-4323-807f-9c73a42ef3da" />
+      <referencedType Id="6aa6228a-5e75-4294-84e4-7244ad880731" name="URL" isAbstract="false" isLeaf="false" cachedFullName="URL">
+        <elementDefinition Id="74189837-e86e-4051-9096-867491373f17" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
   <package Id="0d3f4cca-f1ce-4b9b-a71e-1eb9a2dbbd0e" name="ModelingProject1">
     <elementDefinition Id="2d391278-3959-4040-b0a0-c806819b05c8" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f74477c9-1ac3-4602-af9e-a1dffa85f34c">
+        <profileInstance Id="eca2ea83-8bb7-4c1b-b1fe-cea1166f509c" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="83a61730-7088-4b30-afa7-b48357b07534">
+        <profileInstance Id="8fca1967-fa93-47fb-8741-af8054d72063" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

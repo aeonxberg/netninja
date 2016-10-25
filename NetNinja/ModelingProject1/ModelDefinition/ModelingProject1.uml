@@ -46,10 +46,11 @@
           </property>
           <property
             Id="7848b118-ff7f-41e6-8921-de826474915c"
-            name="EqpImage"
+            name="Image"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
+            isUnique="false"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
@@ -115,6 +116,17 @@
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="64f56044-ba6a-423f-9e7c-24552f5d5f54"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -285,6 +297,112 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="9a52112b-1922-4bb6-aa06-215edd9fbaa6"
+            isDerived="false"
+            sourceEndRoleName="Ninja"
+            targetEndRoleName="Equipment"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="59b8d5e9-81bf-4084-b657-46f0ad155e6b"
+              LastKnownName="Equipment"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="287acade-f415-401f-930b-8979283247d3"
+                  name="Ninja"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d38c2c7f-ca18-41af-970e-055302640db5"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="67c1e15a-259c-4f9d-abf6-66fc695b79be"
+                      name="Upper"
+                      value=".1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f8d547fc-edf7-4455-9a09-a71c4300ec4d"
+                  name="Equipment"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="074e7f74-e3d3-40ba-bbc2-7419321459d8"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d6046139-9722-4029-9291-44dceb5e68de"
+                      name="Upper"
+                      value=".n" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="006978c3-ed50-4588-9bc8-067764c1dcdb"
+            isDerived="false"
+            sourceEndRoleName="Ninja"
+            targetEndRoleName="Store"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea435c4b-bbdf-4d87-b439-4d9ffa2907a7"
+              LastKnownName="Store"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="118bdbe0-031b-4f01-a486-a9e89d6db0ba"
+                  name="Ninja"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="526b78b4-a5fe-4cc3-9a65-4534612be71a"
+                  name="Store"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="f2d8c6b5-a16a-4c3e-95dc-f7177d182ca0"
@@ -511,7 +629,7 @@
                     <literalString
                       Id="35fc56db-1cef-4cf5-a985-1c857d4e5f9e"
                       name="Upper"
-                      value=".n" />
+                      value=".1" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -536,7 +654,7 @@
                     <literalString
                       Id="7759324d-2239-4c3a-899e-4e03dcb0a048"
                       name="Upper"
-                      value=".1" />
+                      value=".n" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -559,24 +677,6 @@
               <undefinedTypeMoniker
                 Id="7ae8d8ec-a2fb-4fc7-9590-14c3d67cf06c"
                 LastKnownName="Int"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="6756fbf6-edec-4cf4-86a2-90fb3cca5724"
-            name="ActiveNinja"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="17edbcc4-d45d-4036-bcee-75474407299f"
-                LastKnownName="Ninja"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
