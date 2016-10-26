@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetNinja.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,41 @@ namespace NetNinja.Windows
         public StoreWindow()
         {
             InitializeComponent();
+            displaySelection =
+            Closing += (s, e) => ViewModelLocator.Cleanup();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void headBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void shoulderBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void chestBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void pantsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bootsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

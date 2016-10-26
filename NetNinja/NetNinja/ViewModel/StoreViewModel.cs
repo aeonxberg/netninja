@@ -9,6 +9,6 @@ namespace NetNinja.ViewModel
 {
     public class StoreViewModel : ViewModelBase
     {
-        private StoreWindow _storeWindow;
+        //The data that gets converted from the model to be used in the view
     }
 }
