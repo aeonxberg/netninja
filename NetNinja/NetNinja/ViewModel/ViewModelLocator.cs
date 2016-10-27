@@ -8,7 +8,7 @@ using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using NetNinja.ViewModel;
 
-namespace NetNinja.Views
+namespace NetNinja.ViewModel
 {
     /*
       In App.xaml:

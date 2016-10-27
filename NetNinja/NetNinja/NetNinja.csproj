@@ -80,6 +80,7 @@
     <Compile Include="Domain\Ninja.cs" />
     <Compile Include="Domain\StoreModel.cs" />
     <Compile Include="ViewModel\EqpViewModel.cs" />
+    <Compile Include="ViewModel\ItemCreateViewModel.cs" />
     <Compile Include="ViewModel\StoreViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

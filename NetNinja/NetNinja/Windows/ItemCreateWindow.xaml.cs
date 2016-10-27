@@ -19,6 +19,8 @@ namespace NetNinja.Windows
     /// </summary>
     public partial class ItemCreateWindow : Window
     {
+        private System.Collections.ObjectModel.ObservableCollection<Domain.Equipment> _equipmentCollection;
+
         public ItemCreateWindow()
         {
             InitializeComponent();
