@@ -8,7 +8,7 @@ namespace NetNinja.Domain
 {
     class DummyEquipmentRepository : IEqpRepository
     {
-        public List<Equipment> GetEqp()
+        public List<Equipment> getEqp()
         {
             var equipments = new List<Equipment>();
 

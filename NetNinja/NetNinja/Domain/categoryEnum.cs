@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetNinja.Domain
 {
-    enum CategoryEnum
+    public enum CategoryEnum
     {
         Head = 1,
         Shoulders = 2

@@ -38,8 +38,9 @@ namespace NetNinja.ViewModel
 
         private void changeCategory()
         {
-            var displaySelection = _storeWindow.getDisplaySelection();
+            _storeWindow.getDisplaySelection();
             //Change data in listbox?
+            
         }
 
     }

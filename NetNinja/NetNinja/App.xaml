@@ -7,7 +7,6 @@
              StartupUri="View/StoreWindow.xaml"
              mc:Ignorable="d">
     <Application.Resources>
-        <vm:ViewModelLocator d:IsDataSource="true"
-                                        x:Key="Locator" />
+        <vm:ViewModelLocator d:IsDataSource="true" x:Key="Locator" />
   </Application.Resources>
 </Application>

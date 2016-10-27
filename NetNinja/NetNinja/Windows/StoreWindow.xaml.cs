@@ -58,10 +58,11 @@ namespace NetNinja.Windows
         {
             List<string> itemNameList = new List<string>();
 
-            foreach (var item in getCollection())
+/*            foreach (var item in getCollection())
             {
                 oldItemNames.Add(item.ToString());
-            }
+            } 
+ */
 
         }
 
@@ -70,6 +71,10 @@ namespace NetNinja.Windows
             return displaySelection;
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
     }
 }
