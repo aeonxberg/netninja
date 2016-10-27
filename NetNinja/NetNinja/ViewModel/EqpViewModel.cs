@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NetNinja.ViewModel
 {
-    class EqpViewModel : ViewModelBase
+    public class EqpViewModel : ViewModelBase
     {
         private Equipment _eqp;
         public string Naam

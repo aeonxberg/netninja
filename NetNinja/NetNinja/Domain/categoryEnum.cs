@@ -8,7 +8,7 @@ namespace NetNinja.Domain
 {
     enum CategoryEnum
     {
-        Head = "Head",
-        Shoulders = "Shoulder"
+        Head = 1,
+        Shoulders = 2
     }
 }
