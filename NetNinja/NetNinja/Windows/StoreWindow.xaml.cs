@@ -1,4 +1,5 @@
 ﻿using NetNinja.Domain;
+using NetNinja.ViewModel;
 using NetNinja.Views;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace NetNinja.Windows
         {
             InitializeComponent();
             displaySelection = CategoryEnum.Head;
+            DataContext = new StoreViewModel();
             Closing += (s, e) => ViewModelLocator.Cleanup();
         }
 

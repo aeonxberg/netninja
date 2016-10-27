@@ -30,9 +30,10 @@ namespace NetNinja.Views
                 //Waarom doen we dit? Denk hier alvast over na.
                 //Het antwoord op deze vraag komt over een tijdje.
                 SimpleIoc.Default.Register<StoreViewModel>();
+
             }
 
-          public StoreViewModel EquipmentList
+          public StoreViewModel StoreViewModel
             {
                 get
                 {
@@ -41,6 +42,7 @@ namespace NetNinja.Views
                     return ServiceLocator.Current.GetInstance<StoreViewModel>();
                 }
             }
+
 
  /*           public AddSongViewModel AddSong
             {

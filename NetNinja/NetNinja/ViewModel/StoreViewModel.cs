@@ -6,42 +6,46 @@ using System.Windows.Input;
 using System.Linq;
 using NetNinja.Domain;
 using NetNinja.Windows;
+using System.ComponentModel;
 
 namespace NetNinja.ViewModel
 {
     public class StoreViewModel : ViewModelBase
     {
-        private StoreWindow _storeWindow;
-        IEqpRepository eqpRepository;
-        public ObservableCollection<EqpViewModel> Eqps { get; set; }
-        //The data that gets converted from the model to be used in the view
+        private ObservableCollection<Equipment> _equipmentCollection;
+        public ICommand headBtnCommand { get; private set; }
 
-        private EqpViewModel _selectedItem; //Category or piece of Equipment?
-
-        public EqpViewModel SelectedItem //Category or piece of Equipment?
+        public ObservableCollection<Equipment> EquipmentCollection
         {
-            get { return _selectedItem; }
-            set { _selectedItem = value; base.RaisePropertyChanged(); }
+            get
+            {
+                return _equipmentCollection;
+            }
+            set
+            {
+                _equipmentCollection = testData();
+                RaisePropertyChanged("EquipmentCollection");
+            }
         }
-
-        //Commands?
-        public ICommand SwitchCategoryCommand { get; set; }
 
         public StoreViewModel()
         {
-            eqpRepository = new DummyEquipmentRepository();
-            var eqpList = eqpRepository.getEqp().Select(eq => new EqpViewModel(eq));
-            Eqps = new ObservableCollection<EqpViewModel>(eqpList);
-
-            SwitchCategoryCommand = new RelayCommand(changeCategory);
+            headBtnCommand = new RelayCommand(HeadBtnMethod);
         }
 
-        private void changeCategory()
+        public void RaisePropertyChanged(string p)
         {
-            _storeWindow.getDisplaySelection();
-            //Change data in listbox?
-            
+            if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(p)); }
         }
 
+        private ObservableCollection<Equipment> testData()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void HeadBtnMethod()
+        {
+            Console.Write("");
+        }
     }
 }
