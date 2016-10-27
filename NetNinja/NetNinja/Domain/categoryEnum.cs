@@ -9,6 +9,9 @@ namespace NetNinja.Domain
     public enum CategoryEnum
     {
         Head = 1,
-        Shoulders = 2
+        Shoulders = 2,
+        Chest = 3,
+        Pants = 4,
+        Boots = 5
     }
 }

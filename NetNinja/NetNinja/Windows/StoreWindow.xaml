@@ -6,40 +6,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.ignore.com"
         mc:Ignorable="d ignore"
-        Width="555.2"
-        Height="341.6"
+        Width="596"
+        Height="408.8"
         Title="MVVM Light Application"
-        DataContext="{Binding StoreViewModel, Source={StaticResource Locator}}">
-    
+        DataContext="{Binding StoreViewModel, Source={StaticResource Locator}}" ResizeMode="NoResize">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="87*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="310" Margin="288,0,0,-0.4" VerticalAlignment="Top" Width="239" Grid.ColumnSpan="2">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="310" Margin="17,46,0,0" VerticalAlignment="Top" Width="121">
+
+        </Border>
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="310" Margin="322,46,0,0" VerticalAlignment="Top" Width="239">
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="134" Margin="25.2,9.2,0,0" VerticalAlignment="Top" Width="187">
                 <Image x:Name="eqpImage"/>
             </Border>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="310" Margin="109,0,0,-0.4" VerticalAlignment="Top" Width="179">
-            <ListBox x:Name="EqpListBox" SelectionChanged="ListBox_SelectionChanged"/>
-        </Border>
-        <Button x:Name="headBtn" Command ="{Binding HeadBtnCommand}" Content="Head" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="0,29,0,0" Click="headBtn_Click"/>
-        <Button x:Name="shoulderBtn" Content="Shoulder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="0,53,0,0" Click="shoulderBtn_Click"/>
-        <Button x:Name="chestBtn" Content="Chest" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="0,77,0,0" Click="chestBtn_Click"/>
-        <Button x:Name="pantsBtn" Content="Pants" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="0,101,0,0" Click="pantsBtn_Click"/>
-        <Button x:Name="bootsBtn" Content="Boots" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="0,125,0,0" Click="bootsBtn_Click"/>
-        <Label Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,151,0,0"/>
-        <Label Content="STR:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,176,0,0"/>
-        <Label Content="INT:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,202,0,0"/>
-        <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,227,0,0"/>
-        <Label Content="Price:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,253,0,0"/>
-        <Button x:Name="buyBtn" Content="Buy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="366,280,0,0" Click="Button_Click"/>
-        <Label x:Name="eqpName" Content="{Binding EquipmentCollection}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="367,151,0,0"/>
-        <Label x:Name="eqpStr" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="367,176,0,0"/>
-        <Label x:Name="eqpInt" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="367,202,0,0"/>
-        <Label x:Name="eqpAgl" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="367,227,0,0"/>
-        <Label x:Name="eqpPrice" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="367,254,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="310" Margin="138,46,0,0" VerticalAlignment="Top" Width="184">
+            <ListBox  x:Name="listBox" HorizontalAlignment="Left" Height="310" Margin="-0.8,-0.8,-0.8,-0.4" VerticalAlignment="Top" Width="184" ItemsSource="{Binding EquipmentCollection}" SelectedItem="{Binding SelectedItem}" SelectionChanged="ListBox_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1" Margin="5, 1, 0, 0"  Content="{Binding Name}"/>
+                            <Label Grid.Column="1" Margin="120,2,0.8,0.2" Content="{Binding Price}" RenderTransformOrigin="-0.875,0.276"/>
+                        </Grid>
+                    </DataTemplate>
 
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+        <Label Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,197,0,0"/>
+        <Label Content="STR:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,222,0,0"/>
+        <Label Content="INT:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,248,0,0"/>
+        <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,273,0,0"/>
+        <Label Content="Price:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,299,0,0"/>
+        <Button x:Name="buyBtn" Content="Buy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="395,326,0,0" Click="Button_Click"/>
+        <Label x:Name="eqpName" Content="{Binding SelectedItem.Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="396,197,0,0"/>
+        <Label x:Name="eqpStr"  Content="{Binding SelectedItem.Strength}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="396,222,0,0"/>
+        <Label x:Name="eqpInt"  Content="{Binding SelectedItem.Intelligence}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="396,248,0,0"/>
+        <Label x:Name="eqpAgl"  Content="{Binding SelectedItem.Agility}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="396,273,0,0"/>
+        <Label x:Name="eqpPrice"  Content="{Binding SelectedItem.Price}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="396,300,0,0"/>
+        <Button x:Name="headBtn" Command ="{Binding headBtnCommand}" Content="Head" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="24,73,0,0" Click="headBtn_Click"/>
+        <Button x:Name="shoulderBtn" Command ="{Binding shoulderBtnCommand}" Content="Shoulder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="24,102,0,0" Click="shoulderBtn_Click"/>
+        <Button x:Name="chestBtn" Command ="{Binding chestBtnCommand}" Content="Chest" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="24,131,0,0" Click="chestBtn_Click"/>
+        <Button x:Name="pantsBtn" Command ="{Binding pantsBtnCommand}" Content="Pants" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="24,160,0,0" Click="pantsBtn_Click"/>
+        <Button x:Name="bootsBtn" Command ="{Binding bootsBtnCommand}" Content="Boots" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="24,190,0,0" Click="bootsBtn_Click"/>
+        <ToolBar HorizontalAlignment="Left" Margin="0,0,-0.2,0" VerticalAlignment="Top" Height="27" Width="573" Grid.ColumnSpan="2">
+            <Button x:Name="newItemBtn" Command ="{Binding newItemCommand}" Content="Create New Item" Height="22" VerticalAlignment="Top" Width="121"/>
+            <Button x:Name="newNinjaBtn" Content="Create New Ninja" Height="22" VerticalAlignment="Top" Width="170"/>
+            <Button x:Name="showNinjaBtn" Command ="{Binding showNinjaCommand}"  Content="Show Ninja" Height="22" VerticalAlignment="Top" Width="114"/>
+            <ComboBox x:Name="ninjaSelectBox" Text="Select Ninja"  IsEditable="False" Height="22.4" Margin="0" VerticalAlignment="Top" Width="120"/>
+        </ToolBar>
     </Grid>
 </Window>

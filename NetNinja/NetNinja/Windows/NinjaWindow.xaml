@@ -1,7 +1,7 @@
 ﻿<Window x:Class="NetNinja.Windows.NinjaWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="NinjaWindow" Height="428" Width="620">
+        Title="NinjaWindow" Height="467.668" Width="620">
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,239,0,0" VerticalAlignment="Top" Width="328"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,183,0,0" VerticalAlignment="Top" Width="328"/>

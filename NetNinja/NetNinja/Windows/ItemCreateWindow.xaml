@@ -20,7 +20,7 @@
         </Border>
         <TextBlock HorizontalAlignment="Left" Margin="10,180,0,0" TextWrapping="Wrap" Text="ImageURL" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="95,179,0,0" TextWrapping="Wrap" Text="URL" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Create" HorizontalAlignment="Left" Margin="114,338,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="itemCreateBtn" Content="Create" HorizontalAlignment="Left" Margin="114,338,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
