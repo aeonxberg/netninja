@@ -1,12 +1,13 @@
-<Application x:Class="NetNinja.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="MainWindow.xaml" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             d1p1:Ignorable="d" 
-             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
-  <Application.Resources>
-    <ResourceDictionary>
-            <vm:ViewModelLocator xmlns:vm="clr-namespace:NetNinja.ViewModel"
-                                        x:Key="Locator"/>
-    </ResourceDictionary>
+<Application x:Class="NetNinja.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:NetNinja.ViewModel"
+             StartupUri="View/StoreWindow.xaml"
+             mc:Ignorable="d">
+    <Application.Resources>
+        <vm:ViewModelLocator d:IsDataSource="true"
+                                        x:Key="Locator" />
   </Application.Resources>
 </Application>

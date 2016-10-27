@@ -16,7 +16,9 @@ namespace NetNinja.Domain
         //Test Data
         {
            // equipmentInCategory.Add(dummyEqp);
-            equipmentInCategory.Add(new Equipment{Name = "TestHead2", Strength=0, Intelligence= 5, Agility = 5, Price =600, CategoryEnum.Head, null});
+            equipmentInCategory.Add(new Equipment
+                               {Name = "TestHead2", Strength=0, Intelligence= 5, Agility = 5, Price =600, Category = CategoryEnum.Head, 
+                                   ImageURL = null});
             return equipmentInCategory;
         }
 
