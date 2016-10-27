@@ -32,17 +32,17 @@ namespace NetNinja.Views
                 SimpleIoc.Default.Register<StoreViewModel>();
             }
 
- /*           public EquipmentManagementViewModel EquipmentList
+          public StoreViewModel EquipmentList
             {
                 get
                 {
                     //De service locator gebruikt een 'singleton' patroon. 
                     //Het maakt niet uit hoevaak je een SongList aanvraagt, je krijgt altijd het zelfde object terug. 
-                    return ServiceLocator.Current.GetInstance<EquipmentManagementViewModel>();
+                    return ServiceLocator.Current.GetInstance<StoreViewModel>();
                 }
             }
 
-            public AddSongViewModel AddSong
+ /*           public AddSongViewModel AddSong
             {
                 get
                 {
