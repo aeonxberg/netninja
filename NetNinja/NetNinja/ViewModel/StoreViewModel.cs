@@ -33,10 +33,10 @@ namespace NetNinja.ViewModel
             headBtnCommand = new RelayCommand(HeadBtnMethod);
         }
 
-        public void RaisePropertyChanged(string p)
+/*        public void RaisePropertyChanged(string p)
         {
             if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(p)); }
-        }
+        }*/
 
         private ObservableCollection<Equipment> testData()
         {

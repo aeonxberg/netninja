@@ -86,7 +86,7 @@ namespace NetNinja.Domain
             set { boots = value; }
         }
 
-        public void newNinja(string name, int str, int intl, int agl, int gold, Equipment head,Equipment shoulders,Equipment chest,Equipment pants,Equipment boots,)
+        public void newNinja(string name, int str, int intl, int agl, int gold, Equipment head,Equipment shoulders,Equipment chest,Equipment pants,Equipment boots)
         {
             this.name = name;
             this.strength = str;
