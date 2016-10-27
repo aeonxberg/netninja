@@ -41,31 +41,31 @@ public class Ninja
 		set;
 	}
 
-	public virtual Int Strength
+	public virtual int Strength
 	{
 		get;
 		set;
 	}
 
-	public virtual Int Intelligence
+	public virtual int Intelligence
 	{
 		get;
 		set;
 	}
 
-	public virtual Int Agility
+	public virtual int Agility
 	{
 		get;
 		set;
 	}
 
-	public virtual Int Gold
+	public virtual int Gold
 	{
 		get;
 		set;
 	}
 
-	public virtual URL NinjaImg
+	public virtual string NinjaImg
 	{
 		get;
 		set;

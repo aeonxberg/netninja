@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/25/2016 15:11:17
+-- Date Created: 10/27/2016 14:42:24
 -- Generated from EDMX file: E:\School\Avans\Blok 5\Programmeren 5\Prog5.NetNinja\netninja\NetNinja\Ninja.domain\Model1.edmx
 -- --------------------------------------------------
 
@@ -113,6 +113,7 @@ ADD CONSTRAINT [FK_EquipmentNinja_Ninja]
     REFERENCES [dbo].[NinjaSet]
         ([Name])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_EquipmentNinja_Ninja'
 CREATE INDEX [IX_FK_EquipmentNinja_Ninja]

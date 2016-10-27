@@ -11,13 +11,13 @@ using System.Text;
 
 public class Store
 {
-	public virtual Int Gold
+	public virtual int Gold
 	{
 		get;
 		set;
 	}
 
-	public virtual Dictionary<String,List > EquipmentCollection
+	public virtual Dictionary<String,Equipment > EquipmentCollection
 	{
 		get;
 		set;
