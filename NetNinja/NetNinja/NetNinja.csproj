@@ -74,8 +74,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Domain\categoryEnum.cs" />
+    <Compile Include="Domain\DummyEquipmentRepository.cs" />
+    <Compile Include="Domain\IEqpRepository.cs" />
     <Compile Include="Domain\Equipment.cs" />
     <Compile Include="Domain\StoreModel.cs" />
+    <Compile Include="ViewModel\EqpViewModel.cs" />
     <Compile Include="ViewModel\StoreViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace NetNinja.Domain
 {
-    enum CategoryEnum
+    interface IEqpRepository
     {
-        Head = "Head",
-        Shoulders = "Shoulder"
+        List<Equipment> getEqp();
     }
 }
