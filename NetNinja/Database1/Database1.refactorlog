@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="af19d463-73d7-400c-bff4-283e8401dee5" ChangeDateTime="10/27/2016 21:28:52">
+    <Property Name="ElementName" Value="[dbo].[Ninja].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Ninja]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7e1fa386-1915-4c5f-ac53-b6a65d85b6fc" ChangeDateTime="10/27/2016 21:30:26">
+    <Property Name="ElementName" Value="[dbo].[Ninja].[Strengt]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Ninja]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Strength" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="be38c0db-38df-478c-a1b9-da40c1b5a122" ChangeDateTime="10/28/2016 10:39:38">
+    <Property Name="ElementName" Value="[dbo].[Equipment].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Equipment]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="21789001-6861-47f6-98bf-9e652ee0d414" ChangeDateTime="10/28/2016 10:42:13">
+    <Property Name="ElementName" Value="[dbo].[NinjaEquipment].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NinjaEquipment]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NinjaName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="18d3fe35-2946-46ba-84ed-b47bfa0fd0ed" ChangeDateTime="10/28/2016 12:05:45">
+    <Property Name="ElementName" Value="[dbo].[Equipment].[Category]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Equipment]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ImageURl" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="02ea87a1-1aa1-4fd8-9f8e-1ce28096a384" ChangeDateTime="10/28/2016 12:05:50">
+    <Property Name="ElementName" Value="[dbo].[Equipment].[ImageURL]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Equipment]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Category" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="82bcf6ad-faf8-4193-aec0-35e90ec0be7b" ChangeDateTime="10/28/2016 12:05:53">
+    <Property Name="ElementName" Value="[dbo].[Equipment].[ImageURl]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Equipment]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ImageURL" />
+  </Operation>
+</Operations>

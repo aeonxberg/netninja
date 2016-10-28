@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="41a0f536-6da0-41bd-8537-8f73a75538b7" name="DKD" linkedPackageId="775aaca8-ef58-49b0-a17b-1b7d1929292c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="d9144aa6-3d2e-496b-aaf3-d88e92851d94">
-      <profileInstance Id="aeeedbc2-830d-4944-b3d3-0fea4e3757ba" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="099894de-a89b-4bf6-8a83-ad760d72a241">
-      <profileInstance Id="3f4a722f-ba69-45b3-9211-3fe26c2b71ff" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="41a0f536-6da0-41bd-8537-8f73a75538b7" name="DKD" linkedPackageId="775aaca8-ef58-49b0-a17b-1b7d1929292c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="82f59c16-908c-4a92-be2d-8bf5c9c5d8d3" name="Ninja" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -91,10 +77,10 @@
               <referencedTypeMoniker Id="cab7c983-59c4-4df5-b15c-d9b00dc04b42" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="80bc1f54-387d-414f-b04c-e1ef8c3afebf" name="NinjaImg" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="80bc1f54-387d-414f-b04c-e1ef8c3afebf" name="ImageURL" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="7c2f9b48-8d70-4197-a00c-acad2ba324d3" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="6cf16c4b-f792-46bf-acf3-a57de26df7e0" LastKnownName="URL" />
+              <referencedTypeMoniker Id="34ca7634-e5ff-40bf-b56b-116593bda821" LastKnownName="string" />
             </type_NamedElement>
           </property>
           <property Id="9f9a5e5e-d695-445d-8ad6-48466edc2053" name="Intelligence" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -119,11 +105,6 @@
     <packageHasNamedElement>
       <referencedType Id="b14e8afe-2db4-42ca-b171-e3a4e04f1120" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
         <elementDefinition Id="ed1a451e-08cb-4e81-b637-f57fe5877e3e" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="6cf16c4b-f792-46bf-acf3-a57de26df7e0" name="URL" isAbstract="false" isLeaf="false" cachedFullName="URL">
-        <elementDefinition Id="a19c1e21-cd9f-4080-9d54-0bf6fb3c8c29" />
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
@@ -162,6 +143,12 @@
           </property>
           <property Id="b9b3488c-de8f-4d7f-bd3e-c9e99dc25555" name="Category" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f6ac8671-371c-4f26-b1bb-aed45ba2861e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cab7c983-59c4-4df5-b15c-d9b00dc04b42" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="f82fe45a-7b3e-474a-91e2-cbfaf78ffd47" name="ImageURL" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b9dee7de-4ac8-4778-b113-0399f0db5b06" />
             <type_NamedElement>
               <referencedTypeMoniker Id="cab7c983-59c4-4df5-b15c-d9b00dc04b42" LastKnownName="string" />
             </type_NamedElement>
@@ -232,8 +219,27 @@
         <elementDefinition Id="6b27cb98-1ed0-4fbf-85ae-89a1ad37fa2e" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="34ca7634-e5ff-40bf-b56b-116593bda821" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="ed1a451e-08cb-4e81-b637-f57fe5877e3e" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="775aaca8-ef58-49b0-a17b-1b7d1929292c" name="DKD_netninja">
     <elementDefinition Id="ab244b28-6356-4bb2-97a5-b43378c88f6f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="d9144aa6-3d2e-496b-aaf3-d88e92851d94">
+        <profileInstance Id="aeeedbc2-830d-4944-b3d3-0fea4e3757ba" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="099894de-a89b-4bf6-8a83-ad760d72a241">
+        <profileInstance Id="3f4a722f-ba69-45b3-9211-3fe26c2b71ff" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

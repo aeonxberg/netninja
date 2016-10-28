@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NetNinjaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Agility" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Intelligence" Type="int" />
+          <Property Name="Strength" Type="int" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ninja">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Agility" Type="int" />
+          <Property Name="Intelligence" Type="int" />
+          <Property Name="Strength" Type="int" />
+          <Property Name="Gold" Type="int" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NetNinjaDatabase.dbo.NinjaEquipment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NinjaEquipment">
+          <Key>
+            <PropertyRef Name="NinjaName" />
+            <PropertyRef Name="EquipmentName" />
+          </Key>
+          <Property Name="NinjaName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EquipmentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="ForeignKeyConstraint1">
+          <End Role="Ninja" Type="Self.Ninja" Multiplicity="1" />
+          <End Role="NinjaEquipment" Type="Self.NinjaEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ninja">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="NinjaEquipment">
+              <PropertyRef Name="NinjaName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ForeignKeyConstraint2">
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="1" />
+          <End Role="NinjaEquipment" Type="Self.NinjaEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="NinjaEquipment">
+              <PropertyRef Name="EquipmentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NetNinjaDatabaseModelStoreContainer">
+          <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ninja" EntityType="Self.Ninja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NinjaEquipment" EntityType="Self.NinjaEquipment" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NinjaEquipment].[NinjaName] AS [NinjaName], 
+    [NinjaEquipment].[EquipmentName] AS [EquipmentName]
+    FROM [dbo].[NinjaEquipment] AS [NinjaEquipment]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="ForeignKeyConstraint1" Association="Self.ForeignKeyConstraint1">
+            <End Role="Ninja" EntitySet="Ninja" />
+            <End Role="NinjaEquipment" EntitySet="NinjaEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="ForeignKeyConstraint2" Association="Self.ForeignKeyConstraint2">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="NinjaEquipment" EntitySet="NinjaEquipment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NetNinjaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Agility" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Intelligence" Type="Int32" />
+          <Property Name="Strength" Type="Int32" />
+          <Property Name="ImageURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ninjas" Relationship="Self.NinjaEquipment" FromRole="Equipment" ToRole="Ninja" />
+        </EntityType>
+        <EntityType Name="Ninja">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Agility" Type="Int32" />
+          <Property Name="Intelligence" Type="Int32" />
+          <Property Name="Strength" Type="Int32" />
+          <Property Name="Gold" Type="Int32" />
+          <Property Name="ImageURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipments" Relationship="Self.NinjaEquipment" FromRole="Ninja" ToRole="Equipment" />
+        </EntityType>
+        <Association Name="NinjaEquipment">
+          <End Role="Ninja" Type="Self.Ninja" Multiplicity="*" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="NetNinjaDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+          <EntitySet Name="Equipments" EntityType="Self.Equipment" />
+          <EntitySet Name="Ninjas" EntityType="Self.Ninja" />
+          <AssociationSet Name="NinjaEquipment" Association="Self.NinjaEquipment">
+            <End Role="Ninja" EntitySet="Ninjas" />
+            <End Role="Equipment" EntitySet="Equipments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NetNinjaDatabaseModelStoreContainer" CdmEntityContainer="NetNinjaDatabaseEntities">
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="NetNinjaDatabaseModel.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipments">
+            <EntityTypeMapping TypeName="NetNinjaDatabaseModel.Equipment">
+              <MappingFragment StoreEntitySet="Equipment">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Agility" ColumnName="Agility" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Intelligence" ColumnName="Intelligence" />
+                <ScalarProperty Name="Strength" ColumnName="Strength" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ninjas">
+            <EntityTypeMapping TypeName="NetNinjaDatabaseModel.Ninja">
+              <MappingFragment StoreEntitySet="Ninja">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Agility" ColumnName="Agility" />
+                <ScalarProperty Name="Intelligence" ColumnName="Intelligence" />
+                <ScalarProperty Name="Strength" ColumnName="Strength" />
+                <ScalarProperty Name="Gold" ColumnName="Gold" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="NinjaEquipment" TypeName="NetNinjaDatabaseModel.NinjaEquipment" StoreEntitySet="NinjaEquipment">
+            <EndProperty Name="Ninja">
+              <ScalarProperty Name="Name" ColumnName="NinjaName" />
+            </EndProperty>
+            <EndProperty Name="Equipment">
+              <ScalarProperty Name="Name" ColumnName="EquipmentName" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,21 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   NetNinja/ClassLibrary1/ClassLibrary1.csproj
+#	new file:   NetNinja/ClassLibrary1/Properties/AssemblyInfo.cs
+#
+# Changes not staged for commit:
+#	modified:   NetNinja/DKD_netninja/DKD_v2.classdiagram
+#	modified:   NetNinja/DKD_netninja/DKD_v2.classdiagram.layout
+#	modified:   NetNinja/DKD_netninja/ModelDefinition/DKD_netninja.uml
+#	modified:   NetNinja/NetNinja.sln
+#
+# Untracked files:
+#	NetNinja/Database1/
+#	NetNinja/NetNinja.Domain/
+#
+

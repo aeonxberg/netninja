@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="ab244b28-6356-4bb2-97a5-b43378c88f6f"
   name="DKD_netninja" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -231,7 +231,7 @@
           </property>
           <property
             Id="7c2f9b48-8d70-4197-a00c-acad2ba324d3"
-            name="NinjaImg"
+            name="ImageURL"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -242,8 +242,8 @@
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="a19c1e21-cd9f-4080-9d54-0bf6fb3c8c29"
-                LastKnownName="URL"
+                Id="ed1a451e-08cb-4e81-b637-f57fe5877e3e"
+                LastKnownName="string"
                 LastKnownLocation="DKD_netninja.uml" />
             </type_NamedElement>
           </property>
@@ -384,6 +384,24 @@
           <property
             Id="f6ac8671-371c-4f26-b1bb-aed45ba2861e"
             name="Category"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ed1a451e-08cb-4e81-b637-f57fe5877e3e"
+                LastKnownName="string"
+                LastKnownLocation="DKD_netninja.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b9dee7de-4ac8-4778-b113-0399f0db5b06"
+            name="ImageURL"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
