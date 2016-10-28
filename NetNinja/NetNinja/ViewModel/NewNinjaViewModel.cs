@@ -11,19 +11,19 @@ using System.Windows.Input;
 
 namespace NetNinja.ViewModel
 {
-    public class NewNinjaViewModel
+    public class NewNinjaViewModel :ViewModelBase
     {
-        //public ObservableCollection<Ninja.Domain.Ninja> _ninjaList;
+        private ObservableCollection<NetNinja.> _ninjaList;
 
         public ICommand saveNinjaCommand { get; private set; }
         public ICommand deleteNinjaCommand { get; private set; }
        
-        /*public ObservabeCollection<Ninja.Domain.Equipment> NinjaList
+        public ObservableCollection<Ninja> NinjaList
             {
                 get{ return _ninjaList;}
                 set{ _ninjaList = value; RaisePropertyChanged("NinjaList");}
             }
-         */
+        
 
         public NewNinjaViewModel()
         {
