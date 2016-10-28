@@ -91,6 +91,7 @@
     <Compile Include="ViewModel\EqpViewModel.cs" />
     <Compile Include="ViewModel\ItemCreateViewModel.cs" />
     <Compile Include="ViewModel\NewNinjaViewModel.cs" />
+    <Compile Include="ViewModel\NinjaViewModel.cs" />
     <Compile Include="ViewModel\StoreViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

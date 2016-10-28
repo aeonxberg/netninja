@@ -17,8 +17,18 @@ namespace NetNinja.ViewModel
         //GET COLLECTION FROM DATABASE
         public ICommand newItemCommand { get; private set; }
         public ICommand deleteItemCommand { get; private set; }
-        //public _selectedNinja;
-        //public EqpViewModel _selectedItem;
+        
+        //public Ninja.Domain.Equipment _selectedItem;
+        //public ObservableCollection<Ninja.Domain.Equipment> _equipmentList;
+        //COLLECTION FOR CATEGORIES? _categoryList;
+
+       
+        /*public ObservabeCollection<Ninja.Domain.Equipment> EquipmentList
+        {
+            get{ return _equipmentList;}
+            set{ _equipmentList = value; RaisePropertyChanged("EquipmentList");}
+        }
+         */
 
         public ItemCreateViewModel()
         {
@@ -26,8 +36,25 @@ namespace NetNinja.ViewModel
              * this._selectedNinja = SELECTEDNINJA;
              * 
              */
+            loadEquipment();
+            loadCategories();
+
             newItemCommand = new RelayCommand(CreateItemMethod);
             deleteItemCommand = new RelayCommand(DeleteItemMethod);
+        }
+
+        private void loadCategories()
+        {
+            //USE DB QUERY TO GET ALL CATEGORIES?
+            //Insert each category in _categoryList
+            throw new NotImplementedException();
+        }
+
+        private void loadEquipment()
+        {
+            //USE A LOOP TO
+            //  Add all equipment from DB to _equipmentList;
+            throw new NotImplementedException();
         }
 
         /* FIELDS ENABLED WHEN NO ITEM SELECTED

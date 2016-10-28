@@ -3,58 +3,59 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="NinjaWindow" Height="467.668" Width="620">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,239,0,0" VerticalAlignment="Top" Width="328"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,183,0,0" VerticalAlignment="Top" Width="328"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,10,0,0" VerticalAlignment="Top" Width="328"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,126,0,0" VerticalAlignment="Top" Width="328"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,66,0,0" VerticalAlignment="Top" Width="328"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="279" Margin="8,10,0,0" VerticalAlignment="Top" Width="183">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,262,0,0" VerticalAlignment="Top" Width="328"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,206,0,0" VerticalAlignment="Top" Width="328"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,33,0,0" VerticalAlignment="Top" Width="328"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,149,0,0" VerticalAlignment="Top" Width="328"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="276,89,0,0" VerticalAlignment="Top" Width="328"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="279" Margin="8,33,0,0" VerticalAlignment="Top" Width="183">
             <Image Margin="1.2,-0.8,-1.4,-1.4"/>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,66,0,0" VerticalAlignment="Top" Width="73">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,89,0,0" VerticalAlignment="Top" Width="73">
             <Image/>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,178,0,0" VerticalAlignment="Top" Width="73">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,201,0,0" VerticalAlignment="Top" Width="73">
             <Image/>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,122,0,0" VerticalAlignment="Top" Width="73">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,145,0,0" VerticalAlignment="Top" Width="73">
             <Image/>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,234,0,0" VerticalAlignment="Top" Width="73">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,257,0,0" VerticalAlignment="Top" Width="73">
             <Image/>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,10,0,0" VerticalAlignment="Top" Width="73">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="198,33,0,0" VerticalAlignment="Top" Width="73">
             <Image/>
         </Border>
-        <Label Content="STR:" HorizontalAlignment="Left" Margin="8,294,0,0" VerticalAlignment="Top"/>
-        <Label Content="INT:" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
-        <Label Content="AGL:" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top"/>
-        <Label Content="Gold:" HorizontalAlignment="Left" Margin="10,371,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,66,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,127,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,185,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,239,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,34,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,91,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,152,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,208,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,263,0,0" VerticalAlignment="Top"/>
-        <Label Content="STR:" HorizontalAlignment="Left" Margin="388,143,0,0" VerticalAlignment="Top"/>
-        <Label Content="STR:" HorizontalAlignment="Left" Margin="387,82,0,0" VerticalAlignment="Top"/>
-        <Label Content="STR:" HorizontalAlignment="Left" Margin="387,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="STR:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,252,0,0"/>
-        <Label Content="STR:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,197,0,0"/>
-        <Label Content="INT:" HorizontalAlignment="Left" Margin="466,143,0,0" VerticalAlignment="Top"/>
-        <Label Content="INT:" HorizontalAlignment="Left" Margin="465,82,0,0" VerticalAlignment="Top"/>
-        <Label Content="INT:" HorizontalAlignment="Left" Margin="465,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="INT:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="466,252,0,0"/>
-        <Label Content="INT:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="466,197,0,0"/>
-        <Label Content="AGL:" HorizontalAlignment="Left" Margin="534,143,0,0" VerticalAlignment="Top"/>
-        <Label Content="AGL:" HorizontalAlignment="Left" Margin="533,82,0,0" VerticalAlignment="Top"/>
-        <Label Content="AGL:" HorizontalAlignment="Left" Margin="533,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="534,252,0,0"/>
-        <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="534,197,0,0"/>
+        <Label Content="STR:" HorizontalAlignment="Left" Margin="8,317,0,0" VerticalAlignment="Top"/>
+        <Label Content="INT:" HorizontalAlignment="Left" Margin="10,343,0,0" VerticalAlignment="Top"/>
+        <Label Content="AGL:" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gold:" HorizontalAlignment="Left" Margin="10,394,0,0" VerticalAlignment="Top"/>
+        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,33,0,0" VerticalAlignment="Top"/>
+        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,208,0,0" VerticalAlignment="Top"/>
+        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,262,0,0" VerticalAlignment="Top"/>
+        <Label Content="price0" HorizontalAlignment="Left" Margin="285,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="price0" HorizontalAlignment="Left" Margin="285,114,0,0" VerticalAlignment="Top"/>
+        <Label Content="price0" HorizontalAlignment="Left" Margin="285,175,0,0" VerticalAlignment="Top"/>
+        <Label Content="price0" HorizontalAlignment="Left" Margin="285,231,0,0" VerticalAlignment="Top"/>
+        <Label Content="price0" HorizontalAlignment="Left" Margin="285,286,0,0" VerticalAlignment="Top"/>
+        <Label Content="STR:" HorizontalAlignment="Left" Margin="388,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="STR:" HorizontalAlignment="Left" Margin="387,105,0,0" VerticalAlignment="Top"/>
+        <Label Content="STR:" HorizontalAlignment="Left" Margin="387,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="STR:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,275,0,0"/>
+        <Label Content="STR:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,220,0,0"/>
+        <Label Content="INT:" HorizontalAlignment="Left" Margin="466,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="INT:" HorizontalAlignment="Left" Margin="465,105,0,0" VerticalAlignment="Top"/>
+        <Label Content="INT:" HorizontalAlignment="Left" Margin="465,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="INT:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="466,275,0,0"/>
+        <Label Content="INT:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="466,220,0,0"/>
+        <Label Content="AGL:" HorizontalAlignment="Left" Margin="534,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="AGL:" HorizontalAlignment="Left" Margin="533,105,0,0" VerticalAlignment="Top"/>
+        <Label Content="AGL:" HorizontalAlignment="Left" Margin="533,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="534,275,0,0"/>
+        <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="534,220,0,0"/>
+        <Label x:Name="ninjaName" Content="Name" HorizontalAlignment="Left" Margin="76,7,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

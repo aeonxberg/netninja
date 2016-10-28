@@ -13,15 +13,30 @@ namespace NetNinja.ViewModel
 {
     public class NewNinjaViewModel
     {
-        //GET NINJA COLLECTION FROM DATABASE
+        //public ObservableCollection<Ninja.Domain.Ninja> _ninjaList;
 
         public ICommand saveNinjaCommand { get; private set; }
         public ICommand deleteNinjaCommand { get; private set; }
+       
+        /*public ObservabeCollection<Ninja.Domain.Equipment> NinjaList
+            {
+                get{ return _ninjaList;}
+                set{ _ninjaList = value; RaisePropertyChanged("NinjaList");}
+            }
+         */
 
         public NewNinjaViewModel()
         {
+            loadNinjas();
             saveNinjaCommand = new RelayCommand(SaveNinjaMethod);
             deleteNinjaCommand = new RelayCommand(DeleteNinjaMethod);
+        }
+
+        private void loadNinjas()
+        {
+            //USE A LOOP TO
+            // Get all Ninjas FROM DB and insert them in _ninjaList;
+            throw new NotImplementedException();
         }
 
         /* FIELDS ENABLED WHEN NO NINJA SELECTED
