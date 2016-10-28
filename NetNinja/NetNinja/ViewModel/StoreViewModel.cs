@@ -20,6 +20,7 @@ namespace NetNinja.ViewModel
         public ICommand bootsBtnCommand { get; private set; }
         public ICommand newItemCommand { get; private set; }
         public ICommand showNinjaCommand { get; private set; }
+        public ICommand newNinjaCommand { get; private set; }
 
         CategoryEnum displayCategory = CategoryEnum.Head;
         Equipment displayItem;
@@ -52,6 +53,13 @@ namespace NetNinja.ViewModel
             bootsBtnCommand = new RelayCommand(BootsBtnMethod);
             newItemCommand = new RelayCommand(OpenItemCreator);
             showNinjaCommand = new RelayCommand(OpenNinjaDisplay);
+            newNinjaCommand = new RelayCommand(OpenNewNinjaDisplay);
+        }
+
+        private void OpenNewNinjaDisplay()
+        {
+            NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
+            ninjaCreateWindow.Show();
         }
 
         private void OpenNinjaDisplay()

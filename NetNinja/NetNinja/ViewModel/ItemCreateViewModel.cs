@@ -11,24 +11,40 @@ using System.Windows.Input;
 
 namespace NetNinja.ViewModel
 {
-    class ItemCreateViewModel
+    public class ItemCreateViewModel
     {
 
         //GET COLLECTION FROM DATABASE
         public ICommand newItemCommand { get; private set; }
+        public ICommand deleteItemCommand { get; private set; }
+
         public ItemCreateViewModel()
         {
-            /*this._selectedNinja = SELECTEDNINJA;
-             * 
+            /*
+             * this._selectedNinja = SELECTEDNINJA;
              * 
              */
             newItemCommand = new RelayCommand(CreateItemMethod);
+            deleteItemCommand = new RelayCommand(DeleteItemMethod);
+        }
+
+        /* FIELDS ENABLED WHEN NO ITEM SELECTED
+         * IF ITEM IS SELECTED FROM COMBOBOX 
+         * FILL FIELDS WITH ITEM.<DATA>
+         */
+
+        private void DeleteItemMethod()
+        {
+            /* ONLY ENABLED WHEN ITEM SELECTED FROM COMBOBOX
+             * REMOVE ITEM FROM DATABASE HERE
+             */ throw new NotImplementedException();
         }
 
         private void CreateItemMethod()
         {
-            //ADD ITEM TO DATABASE HERE
-            throw new NotImplementedException();
+            /* FIELDS ENABLED WHEN NO ITEM SELECTED
+             * ADD ITEM TO DATABASE HERE
+             */ throw new NotImplementedException();
         }
     }
 }

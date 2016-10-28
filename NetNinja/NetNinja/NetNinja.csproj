@@ -90,11 +90,15 @@
     <Compile Include="Domain\StoreModel.cs" />
     <Compile Include="ViewModel\EqpViewModel.cs" />
     <Compile Include="ViewModel\ItemCreateViewModel.cs" />
+    <Compile Include="ViewModel\NewNinjaViewModel.cs" />
     <Compile Include="ViewModel\StoreViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Windows\ItemCreateWindow.xaml.cs">
       <DependentUpon>ItemCreateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NinjaCreateWindow.xaml.cs">
+      <DependentUpon>NinjaCreateWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\NinjaWindow.xaml.cs">
       <DependentUpon>NinjaWindow.xaml</DependentUpon>
@@ -115,6 +119,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\ItemCreateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\NinjaCreateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -30,5 +30,10 @@ namespace NetNinja.Windows
         {
 
         }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

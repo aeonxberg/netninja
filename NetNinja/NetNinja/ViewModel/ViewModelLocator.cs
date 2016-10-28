@@ -42,28 +42,52 @@ namespace NetNinja.ViewModel
                     return ServiceLocator.Current.GetInstance<StoreViewModel>();
                 }
             }
-
-
- /*           public AddSongViewModel AddSong
+        public ItemCreateViewModel ItemCreateViewModel
+        {
+            get
             {
-                get
-                {
-                    //De service locator gebruikt een 'singleton' patroon. 
-                    //Het maakt niet uit hoevaak je een SongList aanvraagt, je krijgt altijd het zelfde object terug. 
-                    return new AddSongViewModel(this.SongList);
-                }
+                //De service locator gebruikt een 'singleton' patroon. 
+                //Het maakt niet uit hoevaak je een SongList aanvraagt, je krijgt altijd het zelfde object terug. 
+                return ServiceLocator.Current.GetInstance<ItemCreateViewModel>();
             }
+        }
 
-            public UpdateSongViewModel UpdateSong
+        public EqpViewModel EqpViewModel
+        {
+            get
             {
-                get
-                {
-                    //Hmmm... Wat moeten we hier nu returnen? Denk er maar eens goed over na!
-                    return null;
-                }
+                return ServiceLocator.Current.GetInstance<EqpViewModel>();
             }
-  */
-            public static void Cleanup()
+        }
+
+        public NewNinjaViewModel NewNinjaViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<NewNinjaViewModel>();
+            }
+        }
+
+        /*           public AddSongViewModel AddSong
+                   {
+                       get
+                       {
+                           //De service locator gebruikt een 'singleton' patroon. 
+                           //Het maakt niet uit hoevaak je een SongList aanvraagt, je krijgt altijd het zelfde object terug. 
+                           return new AddSongViewModel(this.SongList);
+                       }
+                   }
+
+                   public UpdateSongViewModel UpdateSong
+                   {
+                       get
+                       {
+                           //Hmmm... Wat moeten we hier nu returnen? Denk er maar eens goed over na!
+                           return null;
+                       }
+                   }
+         */
+        public static void Cleanup()
             {
             }
         }
