@@ -17,6 +17,8 @@ namespace NetNinja.ViewModel
         //GET COLLECTION FROM DATABASE
         public ICommand newItemCommand { get; private set; }
         public ICommand deleteItemCommand { get; private set; }
+        //public _selectedNinja;
+        //public EqpViewModel _selectedItem;
 
         public ItemCreateViewModel()
         {
