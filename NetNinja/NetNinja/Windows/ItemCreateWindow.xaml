@@ -20,7 +20,10 @@
         </Border>
         <TextBlock HorizontalAlignment="Left" Margin="10,180,0,0" TextWrapping="Wrap" Text="ImageURL" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="95,179,0,0" TextWrapping="Wrap" Text="URL" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="itemCreateBtn" Content="Create" HorizontalAlignment="Left" Margin="114,338,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="itemCreateBtn" Content="Create" HorizontalAlignment="Left" Margin="62,339,0,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox x:Name="existingItems" Text ="Select an Item" HorizontalAlignment="Left" Margin="94,18,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Item" Content="Item:" HorizontalAlignment="Left" Margin="5,14,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="169,339,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
