@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NetNinja.Domain;
+//using NetNinjas;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,16 +14,16 @@ namespace NetNinja.ViewModel
 {
     public class NewNinjaViewModel :ViewModelBase
     {
-        private ObservableCollection<NetNinja.> _ninjaList;
+        private ObservableCollection<Ninja> _ninjaList;
 
         public ICommand saveNinjaCommand { get; private set; }
         public ICommand deleteNinjaCommand { get; private set; }
        
         public ObservableCollection<Ninja> NinjaList
-            {
-                get{ return _ninjaList;}
-                set{ _ninjaList = value; RaisePropertyChanged("NinjaList");}
-            }
+        {
+            get { return _ninjaList; }
+            set { _ninjaList = value; RaisePropertyChanged("NinjaList"); }
+        }
         
 
         public NewNinjaViewModel()
@@ -34,6 +35,23 @@ namespace NetNinja.ViewModel
 
         private void loadNinjas()
         {
+            
+            // Als die using Netninja.Domain nou eens werkt, kunnen we dit verder uitwerken
+            
+            //using (var context = new DatabaseContext())
+            //{
+               
+            //    var compList = context.Competitions
+            //       .Include("Teams")
+            //       .OrderByDescending(c => c.Date)
+            //       .ToList();
+            //    var compVmList = compList.Select(c => new CompetitionViewModel(c));
+            //    Competitions = new ObservableCollection<CompetitionViewModel>(compVmList);
+                
+            //}
+            
+
+            // Nee geen loop, zie hier boven
             //USE A LOOP TO
             // Get all Ninjas FROM DB and insert them in _ninjaList;
             throw new NotImplementedException();

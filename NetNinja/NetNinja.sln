@@ -13,7 +13,7 @@ Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DKD_netninja", "DKD_netninj
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database1", "Database1\Database1.sqlproj", "{A4E4B3C5-BFC6-4BE9-B83B-EF5A53577277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetNinja.Domain", "NetNinja.Domain\NetNinja.Domain.csproj", "{C62BCF09-CF8C-4415-B08C-C27721E33472}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetNinjas", "NetNinja.Domain\NetNinjas.csproj", "{C62BCF09-CF8C-4415-B08C-C27721E33472}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

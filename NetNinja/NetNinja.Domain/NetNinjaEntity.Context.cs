@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NetNinja.Domain
+namespace NetNinjas
 {
     using System;
     using System.Data.Entity;
