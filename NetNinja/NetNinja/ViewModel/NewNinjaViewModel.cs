@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NetNinja.Domain;
-//using NetNinjas;
+using NetNinjas;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,12 +14,13 @@ namespace NetNinja.ViewModel
 {
     public class NewNinjaViewModel :ViewModelBase
     {
-        private ObservableCollection<Ninja> _ninjaList;
+        private ObservableCollection<Domain.Ninja> _ninjaList;
+        private NetNinjas.Ninja c;
 
         public ICommand saveNinjaCommand { get; private set; }
         public ICommand deleteNinjaCommand { get; private set; }
        
-        public ObservableCollection<Ninja> NinjaList
+        public ObservableCollection<Domain.Ninja> NinjaList
         {
             get { return _ninjaList; }
             set { _ninjaList = value; RaisePropertyChanged("NinjaList"); }
@@ -33,28 +34,24 @@ namespace NetNinja.ViewModel
             deleteNinjaCommand = new RelayCommand(DeleteNinjaMethod);
         }
 
+        public NewNinjaViewModel(NetNinjas.Ninja c)
+        {
+            this.c = c;
+        }
+
         private void loadNinjas()
         {
+            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            {
+                var compList = context.Ninjas.ToList();
+                var compVmList = compList.Select(c => new NewNinjaViewModel(c));
+                NinjaList = new ObservableCollection<Domain.Ninja>();
+            }
             
-            // Als die using Netninja.Domain nou eens werkt, kunnen we dit verder uitwerken
-            
-            //using (var context = new DatabaseContext())
-            //{
-               
-            //    var compList = context.Competitions
-            //       .Include("Teams")
-            //       .OrderByDescending(c => c.Date)
-            //       .ToList();
-            //    var compVmList = compList.Select(c => new CompetitionViewModel(c));
-            //    Competitions = new ObservableCollection<CompetitionViewModel>(compVmList);
-                
-            //}
-            
-
             // Nee geen loop, zie hier boven
             //USE A LOOP TO
             // Get all Ninjas FROM DB and insert them in _ninjaList;
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         /* FIELDS ENABLED WHEN NO NINJA SELECTED

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetNinja.Domain
 {
-    class Ninja
+    public class Ninja
     {
         string name;
 

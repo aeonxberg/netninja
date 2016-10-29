@@ -28,5 +28,10 @@ namespace NetNinja.Windows
         {
 
         }
+
+        private void ninjaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
