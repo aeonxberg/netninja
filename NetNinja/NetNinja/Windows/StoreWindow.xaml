@@ -27,7 +27,7 @@
             </Border>
         </Border>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="310" Margin="143,46,0,0" VerticalAlignment="Top" Width="285" Grid.ColumnSpan="2">
-            <ListBox  x:Name="listBox" HorizontalAlignment="Left" Height="310" Margin="-0.8,-0.8,-1,-0.4" VerticalAlignment="Top" Width="285" ItemsSource="{Binding EquipmentCollection}" SelectedItem="{Binding SelectedItem}" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox  x:Name="listBox" HorizontalAlignment="Left" Height="310" Margin="-0.8,-0.8,-1,-0.4" VerticalAlignment="Top" Width="285" ItemsSource="{Binding SelectedEquipmentSelection}" SelectedItem="{Binding SelectedItem}" SelectionChanged="ListBox_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -64,7 +64,7 @@
             <Button x:Name="newItemBtn" Command ="{Binding newItemCommand}" Content="Create New Item" Height="22" VerticalAlignment="Top" Width="121"/>
             <Button x:Name="newNinjaBtn" Command ="{Binding newNinjaCommand}" Content="Create New Ninja" Height="22" VerticalAlignment="Top" Width="205"/>
             <Button x:Name="showNinjaBtn" Command ="{Binding showNinjaCommand}"  Content="Show Ninja" Height="22" VerticalAlignment="Top" Width="161" Click="showNinjaBtn_Click"/>
-            <ComboBox x:Name="ninjaSelectBox" ItemsSource="{Binding NinjaCollection}" SelectedItem="{Binding SelectedNinja}" DisplayMemberPath="Name"  IsSynchronizedWithCurrentItem="True" IsEditable="True" IsReadOnly="True" Margin="0,0,0,0.4" VerticalAlignment="Stretch" Width="228" SelectionChanged="{Binding SelectedNinja}"/>
+            <ComboBox x:Name="ninjaSelectBox" ItemsSource="{Binding NinjaCollection}" SelectedItem="{Binding SelectedNinja}" DisplayMemberPath="Name"  IsSynchronizedWithCurrentItem="True" IsEditable="True" IsReadOnly="True" Margin="0,0,0,0.4" VerticalAlignment="Stretch" Width="228" />
             <Button x:Name="refreshBtn" Content="Refresh" Command ="{Binding refreshCommand}" Height="22.4" VerticalAlignment="Top" Width="75" Click="refreshBtn_Click"/>
         </ToolBar>
     </Grid>

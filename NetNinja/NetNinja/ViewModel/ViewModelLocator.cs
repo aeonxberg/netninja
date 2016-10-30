@@ -46,7 +46,7 @@ namespace NetNinja.ViewModel
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<ItemCreateViewModel>();
+                return new ItemCreateViewModel();
             }
         }
 

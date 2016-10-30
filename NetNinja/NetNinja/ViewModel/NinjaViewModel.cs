@@ -1,4 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using NetNinja.Windows;
 using NetNinjas;
 using System;
 using System.Collections.Generic;
@@ -6,12 +8,15 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace NetNinja.ViewModel
 {
     public class NinjaViewModel : ViewModelBase
     {
         //Fill WITH ANY COMMANDS
+        public ICommand backCommand { get; private set; }
         private ObservableCollection<NetNinjas.Equipment> _equipmentSet;
         private NetNinjas.Ninja _selectedNinja;
         private string _name;
@@ -52,7 +57,15 @@ namespace NetNinja.ViewModel
             _name = _selectedNinja.Name;
 
             // FILL WITH ANY RELAYCOMMANDS
+            backCommand = new RelayCommand(BackMethod);
 
+        }
+
+        private void BackMethod()
+        {
+            StoreWindow storeWindow = new StoreWindow();
+            Application.Current.Windows[0].Close();
+            storeWindow.Show();
         }
 
         private void LoadEquipmentSet()

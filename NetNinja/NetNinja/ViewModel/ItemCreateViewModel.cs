@@ -57,14 +57,14 @@ namespace NetNinja.ViewModel
         {
             //USE DB QUERY TO GET ALL CATEGORIES?
             //Insert each category in _categoryList
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void loadEquipment()
         {
             //USE A LOOP TO
             //  Add all equipment from DB to _equipmentList;
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         /* FIELDS ENABLED WHEN NO ITEM SELECTED

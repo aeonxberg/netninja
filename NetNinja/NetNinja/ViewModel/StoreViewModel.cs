@@ -14,6 +14,7 @@ namespace NetNinja.ViewModel
     public class StoreViewModel : ViewModelBase
     {
         private ObservableCollection<NetNinjas.Equipment> _equipmentCollection;
+        private ObservableCollection<NetNinjas.Equipment> _selectedEquipmentCollection;
         private ObservableCollection<NetNinjas.Ninja> _ninjaCollection;
 
         public ICommand headBtnCommand { get; private set; }
@@ -55,6 +56,18 @@ namespace NetNinja.ViewModel
             }
         }
 
+        public ObservableCollection<NetNinjas.Equipment> SelectedEquipmentSelection
+        {
+            get
+            {
+                return _selectedEquipmentCollection;
+            }
+            set
+            {
+                RaisePropertyChanged("SelectedEquipmentCollection");
+            }
+        }
+
         public ObservableCollection<NetNinjas.Ninja> NinjaCollection
         {
             get
@@ -69,8 +82,9 @@ namespace NetNinja.ViewModel
 
         public StoreViewModel(/*NetNinjas.Ninja selectedNinja*/)
         {
-          
+
             _equipmentCollection = new ObservableCollection<NetNinjas.Equipment>();
+            _selectedEquipmentCollection = new ObservableCollection<NetNinjas.Equipment>();
             _ninjaCollection = new ObservableCollection<NetNinjas.Ninja>();
             loadStoreItems();
             loadNinjas();
@@ -184,33 +198,42 @@ namespace NetNinja.ViewModel
         private void HeadBtnMethod()
         {
             displayCategory = "Head";
-            testData();
-            displayCorrectItems();
+
+            displayCorrectItems("Head");
+        }
+
+        private void displayCorrectItems(string selectedCategory)
+        {
+            _selectedEquipmentCollection.Clear();
+
+            foreach (Equipment e in _equipmentCollection)
+            {
+                if (e.Category == selectedCategory)
+                {
+                    _selectedEquipmentCollection.Add(e);
+                }
+            }
+
         }
 
         private void BootsBtnMethod()
         {
-            displayCategory = "Boots";
-            displayCorrectItems();
+            displayCorrectItems("Boots");
         }
 
         private void PantsBtnMethod()
         {
-            displayCategory = "Pants";
-            displayCorrectItems();
+            displayCorrectItems("Pants");
         }
 
         private void ChestBtnMethod()
         {
-            displayCategory = "Chest";
-            testData();
-            displayCorrectItems();
+            displayCorrectItems("Chest");
         }
 
         private void ShoulderBtnMethod()
         {
-            displayCategory = "Shoulders";
-            displayCorrectItems();
+            displayCorrectItems("Shoulders");
         }
 
         private void displayCorrectItems()
@@ -245,48 +268,6 @@ namespace NetNinja.ViewModel
                 GearList = _newList;
              }
              */
-        }
-
-        private ObservableCollection<NetNinjas.Equipment> testData()
-        {
-            _equipmentCollection.Clear();
-            if (displayCategory.Equals("Head"))
-            {
-                _equipmentCollection.Add(new NetNinjas.Equipment
-                {
-                    Name = "testHead",
-                    Strength = 10,
-                    Intelligence = 10,
-                    Agility = 10,
-                    Category = "Head",
-                    ImageURL = null,
-                    Price = 500
-                });
-            }
-            else if (displayCategory.Equals("Chest"))
-            {
-                _equipmentCollection.Add(new NetNinjas.Equipment
-                {
-                    Name = "testChest",
-                    Strength = 0,
-                    Intelligence = 10,
-                    Agility = -10,
-                    Category = "Head",
-                    ImageURL = null,
-                    Price = 100
-                });
-                _equipmentCollection.Add(new NetNinjas.Equipment
-                {
-                    Name = "Weighted Chest",
-                    Strength = 44,
-                    Intelligence = -44,
-                    Agility = -22,
-                    Category = "Head",
-                    ImageURL = null,
-                    Price = 1000
-                });
-            }
-            return _equipmentCollection;
         }
 
         public bool _canBuy { get; set; }
