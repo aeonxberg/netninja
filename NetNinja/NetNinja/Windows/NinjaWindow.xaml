@@ -32,16 +32,16 @@
         <Label Content="INT:" HorizontalAlignment="Left" Margin="10,343,0,0" VerticalAlignment="Top"/>
         <Label Content="AGL:" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top"/>
         <Label Content="Gold:" HorizontalAlignment="Left" Margin="10,394,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,33,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,89,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,208,0,0" VerticalAlignment="Top"/>
-        <Label Content="DefaultNaam" HorizontalAlignment="Left" Margin="285,262,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,57,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,114,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,175,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,231,0,0" VerticalAlignment="Top"/>
-        <Label Content="price0" HorizontalAlignment="Left" Margin="285,286,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaHead.Name}" HorizontalAlignment="Left" Margin="285,33,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaShoulders.Name}" HorizontalAlignment="Left" Margin="285,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaChest.Name}" HorizontalAlignment="Left" Margin="285,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaPants.Name}" HorizontalAlignment="Left" Margin="285,208,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaBoots.Name}" HorizontalAlignment="Left" Margin="285,262,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaHead.Price}" HorizontalAlignment="Left" Margin="285,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaShoulders.Price}" HorizontalAlignment="Left" Margin="285,114,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaChest.Price}" HorizontalAlignment="Left" Margin="285,175,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaPants.Price}" HorizontalAlignment="Left" Margin="285,231,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding NinjaBoots.Price}" HorizontalAlignment="Left" Margin="285,286,0,0" VerticalAlignment="Top"/>
         <Label Content="STR:" HorizontalAlignment="Left" Margin="388,166,0,0" VerticalAlignment="Top"/>
         <Label Content="STR:" HorizontalAlignment="Left" Margin="387,105,0,0" VerticalAlignment="Top"/>
         <Label Content="STR:" HorizontalAlignment="Left" Margin="387,49,0,0" VerticalAlignment="Top"/>

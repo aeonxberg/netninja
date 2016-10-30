@@ -19,6 +19,11 @@ namespace NetNinja.ViewModel
         public ICommand backCommand { get; private set; }
         private ObservableCollection<NetNinjas.Equipment> _equipmentSet;
         private Ninja _selectedNinja;
+        private Equipment _ninjaHead;
+        private Equipment _ninjaShoulders;
+        private Equipment _ninjaChest;
+        private Equipment _ninjaPants;
+        private Equipment _ninjaBoots;
         private string _name;
 
         //DATA BINDING FOR EQUIPMENTSET LABELS AND STUFF
@@ -39,8 +44,31 @@ namespace NetNinja.ViewModel
             set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); }
         }
 
-
-
+        public Equipment NinjaHead
+        {
+            get { return _ninjaHead; }
+            set { _ninjaHead = value; RaisePropertyChanged("NinjaHead"); }
+        }
+        public Equipment NinjaShoulders
+        {
+            get { return _ninjaShoulders; }
+            set { _ninjaShoulders = value; RaisePropertyChanged("NinjaShoulders"); }
+        }
+        public Equipment NinjaChest
+        {
+            get { return _ninjaChest; }
+            set { _ninjaChest = value; RaisePropertyChanged("NinjaChest"); }
+        }
+        public Equipment NinjaPants
+        {
+            get { return _ninjaPants; }
+            set { _ninjaPants = value; RaisePropertyChanged("NinjaPants"); }
+        }
+        public Equipment NinjaBoots
+        {
+            get { return _ninjaBoots; }
+            set { _ninjaBoots = value; RaisePropertyChanged("NinjaBoots"); }
+        }
 
         public string Name
         {
@@ -50,12 +78,11 @@ namespace NetNinja.ViewModel
 
         public NinjaViewModel(Ninja ninja)
         {
-            MessageBox.Show("NinjaViewModel: " + ninja.Name);
-            _equipmentSet = new ObservableCollection<NetNinjas.Equipment>();
+            _equipmentSet = new ObservableCollection<Equipment>();
             LoadEquipmentSet();
 
             SelectedNinja = ninja;
-            _name = _selectedNinja.Name;
+            _name = SelectedNinja.Name;
 
             // FILL WITH ANY RELAYCOMMANDS
             backCommand = new RelayCommand(BackMethod);
@@ -72,7 +99,29 @@ namespace NetNinja.ViewModel
         private void LoadEquipmentSet()
         {
             using (var context = new NetNinjaDatabaseEntities())
-                _equipmentSet = new ObservableCollection<NetNinjas.Equipment>(context.Equipments);
+                _equipmentSet = new ObservableCollection<NetNinjas.Equipment>(SelectedNinja.Equipments);
+
+            foreach(Equipment eqpItem in _equipmentSet)
+            {
+                switch (eqpItem.Category.ToLower())
+                {
+                    case "head":
+                        NinjaHead = eqpItem;
+                        break;
+                    case "shoulders":
+                        NinjaShoulders = eqpItem;
+                        break;
+                    case "chest":
+                        NinjaChest = eqpItem;
+                        break;
+                    case "pants":
+                        NinjaPants = eqpItem;
+                        break;
+                    case "boots":
+                        NinjaBoots = eqpItem;
+                        break;
+                }
+            }
         }
 
         /* private void LoadEquipmentSet(){
