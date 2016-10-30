@@ -26,8 +26,7 @@ namespace NetNinja.ViewModel
         public ICommand showNinjaCommand { get; private set; }
         public ICommand newNinjaCommand { get; private set; }
         public ICommand refreshCommand { get; private set; }
-
-        string displayCategory = null;
+        
         NetNinjas.Equipment displayItem;
         NetNinjas.Ninja _selectedNinja;
         bool btnEnabled = false;
@@ -197,8 +196,6 @@ namespace NetNinja.ViewModel
 
         private void HeadBtnMethod()
         {
-            displayCategory = "Head";
-
             displayCorrectItems("Head");
         }
 
