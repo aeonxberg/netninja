@@ -15,6 +15,7 @@ namespace NetNinja.ViewModel
     {
         private ObservableCollection<NetNinjas.Ninja> _ninjaList;
         private NetNinjas.Ninja c;
+        private string _name;
 
         public ICommand saveNinjaCommand { get; private set; }
         public ICommand deleteNinjaCommand { get; private set; }
@@ -23,6 +24,12 @@ namespace NetNinja.ViewModel
         {
             get { return _ninjaList; }
             set { _ninjaList = value; RaisePropertyChanged("NinjaList"); }
+        }
+        
+        public string NinjaName
+        {
+            get { return _name; }
+            set { _name = value; RaisePropertyChanged("NinjaName"); }
         }
         
 
@@ -61,11 +68,13 @@ namespace NetNinja.ViewModel
         private void SaveNinjaMethod()
         {
             Ninja n = new Ninja();
+            n.Name = _name;
             n.Agility = Math.Abs(new Random().Next(0, 30));
             n.Intelligence = Math.Abs(new Random().Next(0, 30));
             n.Strength = Math.Abs(new Random().Next(0, 30));
             n.Gold = Math.Abs(new Random().Next(100, 1000));
-
+            Console.WriteLine("Ninja Name: " + n.Name);
+            
             using (var context = new NetNinjas.NetNinjaDatabaseEntities())
             {
                 context.Ninjas.Add(n);

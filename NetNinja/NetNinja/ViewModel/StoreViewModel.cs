@@ -233,7 +233,7 @@ namespace NetNinja.ViewModel
                  }
                 GearList = _newList;
              }
-                  */
+             */
         }
 
         private ObservableCollection<NetNinjas.Equipment> testData()

@@ -19,6 +19,7 @@ namespace NetNinja.Windows
     /// </summary>
     public partial class NinjaCreateWindow : Window
     {
+        string n;
         public NinjaCreateWindow()
         {
             InitializeComponent();
@@ -32,6 +33,12 @@ namespace NetNinja.Windows
         private void ninjaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+        
+
+        private void ninjaNameBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            n = ninjaNameBox.Text;            
         }
     }
 }
