@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NetNinja.Windows"
         mc:Ignorable="d"
-        Title="NinjaCreateWindow" Height="415.299" Width="300">
+        Title="NinjaCreateWindow" Height="415.299" Width="300"
+        DataContext="{Binding NewNinjaViewModel, Source={StaticResource Locator}}" ResizeMode="NoResize">
+    
     <Grid>
         <Label x:Name="ninjaName" Content="Name:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
         <Label x:Name="ninjaImage" Content="ImageUrl:" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>

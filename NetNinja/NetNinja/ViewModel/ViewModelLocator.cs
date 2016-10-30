@@ -62,7 +62,7 @@ namespace NetNinja.ViewModel
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<NewNinjaViewModel>();
+                return new NewNinjaViewModel();
             }
         }
 

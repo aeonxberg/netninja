@@ -1,7 +1,9 @@
 ﻿<Window x:Class="NetNinja.Windows.ItemCreateWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ItemCreateWindow" Height="422.814" Width="311.2">
+        Title="ItemCreateWindow" Height="422.814" Width="311.2" 
+        DataContext="{Binding ItemCreateViewModel, Source={StaticResource Locator}}" ResizeMode="NoResize">
+    
     <Grid Margin="0,0,-0.2,-0.4">
         <TextBox HorizontalAlignment="Left" Height="23" Margin="94,40,0,0" TextWrapping="Wrap" Text="EqpName" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="94,63,0,0" TextWrapping="Wrap" Text="&lt;STR&gt;" VerticalAlignment="Top" Width="120"/>
