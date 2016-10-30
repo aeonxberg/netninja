@@ -79,22 +79,29 @@ namespace NetNinja.ViewModel
 
         private void SaveNinjaMethod()
         {
-            Ninja n = new Ninja();
-            n.Name = _name;
-            n.ImageURL = _imageURL;
-            n.Agility = Math.Abs(new Random().Next(0, 30));
-            n.Intelligence = Math.Abs(new Random().Next(0, 30));
-            n.Strength = Math.Abs(new Random().Next(0, 30));
-            n.Gold = Math.Abs(new Random().Next(100, 1000));
-            
-            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            if (_name != null && _imageURL != null)
             {
-                context.Ninjas.Add(n);
-                context.SaveChanges();
+                Ninja n = new Ninja();
+                n.Name = _name;
+                n.ImageURL = _imageURL;
+                n.Agility = 0;
+                n.Intelligence = 0;
+                n.Strength = 0;
+                n.Gold = Math.Abs(new Random().Next(100, 10000));
+
+                using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+                {
+                    context.Ninjas.Add(n);
+                    context.SaveChanges();
+                }
+                NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
+                Application.Current.Windows[0].Close();
+                ninjaCreateWindow.Show();
             }
-            NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
-            Application.Current.Windows[0].Close();
-            ninjaCreateWindow.Show();
+            else
+            {
+                MessageBox.Show("Something went wrong. Make sure both values are filled in.");
+            }
         }
 
         private void DeleteNinjaMethod()
