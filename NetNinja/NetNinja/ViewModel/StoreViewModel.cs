@@ -76,6 +76,7 @@ namespace NetNinja.ViewModel
             using (var context = new NetNinjaDatabaseEntities())
                 _equipmentCollection = new ObservableCollection<NetNinjas.Equipment>(context.Equipments);//ERROR
         }
+
         private void loadNinjas()
         {
             using (var context = new NetNinjaDatabaseEntities())
