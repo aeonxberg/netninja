@@ -59,6 +59,10 @@
         <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="534,220,0,0"/>
         <Label x:Name="ninjaName"  Content="{Binding SelectedNinja.Name}" HorizontalAlignment="Left" Margin="76,7,0,0" VerticalAlignment="Top"/>
         <Button x:Name="backBtn" Command="{Binding backCommand}" Content="Back" HorizontalAlignment="Left" Margin="253,6,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="{Binding TotalStr}" HorizontalAlignment="Left" Margin="54,317,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding TotalInt}" HorizontalAlignment="Left" Margin="54,343,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding TotalAgl}" HorizontalAlignment="Left" Margin="54,369,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gold:" HorizontalAlignment="Left" Margin="54,394,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

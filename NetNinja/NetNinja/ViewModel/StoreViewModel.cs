@@ -8,14 +8,17 @@ using NetNinja.Windows;
 using System.ComponentModel;
 using NetNinjas;
 using System.Windows;
+using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace NetNinja.ViewModel
 {
-    public class  StoreViewModel : ViewModelBase
+    public class StoreViewModel : ViewModelBase
     {
         private ObservableCollection<NetNinjas.Equipment> _equipmentCollection;
         private ObservableCollection<NetNinjas.Equipment> _selectedEquipmentCollection;
         private ObservableCollection<NetNinjas.Ninja> _ninjaCollection;
+        private ObservableCollection<NetNinjas.Equipment> _boughtCollection;
 
         public ICommand headBtnCommand { get; private set; }
         public ICommand shoulderBtnCommand { get; private set; }
@@ -26,23 +29,32 @@ namespace NetNinja.ViewModel
         public ICommand showNinjaCommand { get; private set; }
         public ICommand newNinjaCommand { get; private set; }
         public ICommand refreshCommand { get; private set; }
-        
+        public ICommand buyBtnCommand { get; private set; }
+
         NetNinjas.Equipment displayItem;
         NetNinjas.Ninja _selectedNinja;
-        bool btnEnabled = false;
+        bool _canBuy = false;
 
-        public bool ButtonEnabled
+        public Boolean CanBuy
         {
-            get
-            {
-                return btnEnabled;
-            }
+            get { return _canBuy; }
             set
             {
-                RaisePropertyChanged("btnEnabled");
+                if (value)
+                {
+                    if (!CheckCanBuy())
+                    {
+                        _canBuy = value;
+                        RaisePropertyChanged("CanBuy");
+                    }
+                }
+                else if (!value)
+                {
+                    _canBuy = value;
+                    RaisePropertyChanged("CanBuy");
+                }
             }
         }
-
         public ObservableCollection<NetNinjas.Equipment> EquipmentCollection
         {
             get
@@ -78,13 +90,14 @@ namespace NetNinja.ViewModel
                 RaisePropertyChanged("NinjaCollection");
             }
         }
+
         public Ninja SelectedNinja
         {
             get { return _selectedNinja; }
             set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); }
         }
 
-        public  StoreViewModel(/*NetNinjas.Ninja selectedNinja*/)
+        public StoreViewModel(/*NetNinjas.Ninja selectedNinja*/)
         {
 
             _equipmentCollection = new ObservableCollection<NetNinjas.Equipment>();
@@ -102,7 +115,13 @@ namespace NetNinja.ViewModel
             showNinjaCommand = new RelayCommand(OpenNinjaDisplay);
             newNinjaCommand = new RelayCommand(OpenNewNinjaDisplay);
             refreshCommand = new RelayCommand(RefreshMethod);
+            buyBtnCommand = new RelayCommand(BuyMethod);
 
+        }
+
+        private void BuyMethod()
+        {
+            _boughtCollection.Add(SelectedItem);
         }
 
         private void RefreshMethod()
@@ -119,8 +138,8 @@ namespace NetNinja.ViewModel
 
         private void loadNinjas()
         {
-           using (var context = new NetNinjaDatabaseEntities())
-               _ninjaCollection = new ObservableCollection<NetNinjas.Ninja>(context.Ninjas);//ERROR
+            using (var context = new NetNinjaDatabaseEntities())
+                _ninjaCollection = new ObservableCollection<NetNinjas.Ninja>(context.Ninjas);//ERROR
         }
 
         private void OpenNewNinjaDisplay()
@@ -133,8 +152,8 @@ namespace NetNinja.ViewModel
         private void OpenNinjaDisplay()
         {
             MessageBox.Show("StoreViewModel: " + SelectedNinja.Name);
-            NinjaWindow displayWindow = new NinjaWindow(); 
-            displayWindow.Show();           
+            NinjaWindow displayWindow = new NinjaWindow();
+            displayWindow.Show();
             Application.Current.Windows[0].Close();
         }
 
@@ -169,31 +188,40 @@ namespace NetNinja.ViewModel
 
         private bool CheckCanBuy()
         {
-            /*           if (SelectedItem.Price <= 500)
-                       {
-                           return true;
-                       }
-                       return false; */
-            return true;
+            if(SelectedNinja.Gold< SelectedItem.Price)
+            {
+                return true;
+            }
+            bool _hasCategory = false;
+            using (var context = new NetNinjaDatabaseEntities())
+            {
+                var _ninjas = context.Ninjas.Include(n => n.Equipments).ToList();
+
+                List<Equipment> equipment = null;
+                foreach (var item in _ninjas)
+                {
+                    if (item.Name.Equals(SelectedNinja.Name))
+                    {
+                        equipment = new List<Equipment>(item.Equipments);
+                    }
+                }
+
+                foreach (var item in equipment)
+                {
+                    if (item.Category.Equals(SelectedItem.Category))
+                    {
+                        _hasCategory = true;
+                        break;
+                    }
+                }
+            }
+            return _hasCategory;
         }
 
         public NetNinjas.Equipment SelectedItem
         {
             get { return displayItem; }
             set { displayItem = value; RaisePropertyChanged("SelectedItem"); CanBuy = true; }
-        }
-        
-
-        private void switchButtonState(Ninja _selectedNinja)
-        {
-            if (_selectedNinja != null)
-            {
-                btnEnabled = true;
-            }
-            else
-            {
-                btnEnabled = false;
-            }
         }
 
         private void HeadBtnMethod()
@@ -268,8 +296,5 @@ namespace NetNinja.ViewModel
              }
              */
         }
-
-        public bool _canBuy { get; set; }
-
     }
 }
