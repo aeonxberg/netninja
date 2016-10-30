@@ -122,15 +122,22 @@ namespace NetNinja.ViewModel
             /* ONLY ENABLED WHEN NINJA IS SELECTED FROM COMBOBOX
              * DELETE SELECTED NINJA
              */
-            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            if (_selectedNinja != null)
             {
-                context.Ninjas.Attach(_selectedNinja);
-                context.Ninjas.Remove(_selectedNinja);
-                context.SaveChanges();
+                using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+                {
+                    context.Ninjas.Attach(_selectedNinja);
+                    context.Ninjas.Remove(_selectedNinja);
+                    context.SaveChanges();
+                }
+                NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
+                Application.Current.Windows[0].Close();
+                ninjaCreateWindow.Show();
             }
-            NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
-            Application.Current.Windows[0].Close();
-            ninjaCreateWindow.Show();
+            else
+            {
+                MessageBox.Show("Something went wrong. Make sure you select a Ninja to Delete.");
+            }
         }
     }
 }

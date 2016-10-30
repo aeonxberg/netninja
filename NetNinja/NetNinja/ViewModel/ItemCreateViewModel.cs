@@ -15,55 +15,6 @@ namespace NetNinja.ViewModel
 {
     public class ItemCreateViewModel : ViewModelBase
     {
-        // FIELDS
-        private string _name;
-        private string _strength;
-        private string _intelligence;
-        private string _agility;
-        private string _price;
-        private string _selectedCategory;
-        private string _imageURL;
-
-        // PROPERTIES
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; RaisePropertyChanged("Name"); }
-        }
-        public string Strength
-        {
-            get { return _strength; }
-            set { _strength = value; RaisePropertyChanged("Strength"); }
-        }
-        public string Intelligence
-        {
-            get { return _intelligence; }
-            set { _intelligence = value; RaisePropertyChanged("Intelligence"); }
-        }
-        public string Agility
-        {
-            get { return _agility; }
-            set { _agility = value; RaisePropertyChanged("Agility"); }
-        }
-        public string Price
-        {
-            get { return _price; }
-            set { _price = value; RaisePropertyChanged("Price"); }
-        }
-        public string SelectedCategory
-        {
-            get { return _selectedCategory; }
-            set { _selectedCategory = value; RaisePropertyChanged("SelectedCategory"); }
-        }
-        public string ImageURL
-        {
-            get { return _imageURL; }
-            set { _imageURL = value; RaisePropertyChanged("ImageURL"); }
-        }
-
-
-
-
         //GET COLLECTION FROM DATABASE
         public ICommand newItemCommand { get; private set; }
         public ICommand deleteItemCommand { get; private set; }
@@ -95,6 +46,17 @@ namespace NetNinja.ViewModel
         // CONSTRUCTOR
         public ItemCreateViewModel()
         {
+
+            _selectedItem = new Equipment
+            {
+                Name = "item name",
+                Strength = 0,
+                Agility = 0,
+                Intelligence = 0,
+                Price = 0,
+                Category = "Head",
+                ImageURL = "no image URL"
+            };
 
             _categoryList = new ObservableCollection<string>();
             loadEquipment();
@@ -157,18 +119,9 @@ namespace NetNinja.ViewModel
              * ADD ITEM TO DATABASE HERE
              */
 
-            Equipment e = new Equipment();
-            e.Name = _name;
-            e.Strength = Convert.ToInt32(_strength);
-            e.Intelligence = Convert.ToInt32(_intelligence);
-            e.Agility = Convert.ToInt32(_agility);
-            e.Price = Convert.ToInt32(_price);
-            e.Category = _selectedCategory;
-            e.ImageURL = _imageURL;
-
             using (var context = new NetNinjas.NetNinjaDatabaseEntities())
             {
-                context.Equipments.Add(e);
+                context.Equipments.Add(_selectedItem);
                 context.SaveChanges();
             }
             ItemCreateWindow itemCreateWindow = new ItemCreateWindow();
