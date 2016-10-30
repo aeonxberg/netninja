@@ -99,7 +99,10 @@ namespace NetNinja.ViewModel
         private void LoadEquipmentSet()
         {
             using (var context = new NetNinjaDatabaseEntities())
-                _equipmentSet = new ObservableCollection<NetNinjas.Equipment>(SelectedNinja.Equipments);
+            {
+                _equipmentSet = new ObservableCollection<NetNinjas.Equipment>(context.Equipments);
+
+            }
 
             foreach(Equipment eqpItem in _equipmentSet)
             {

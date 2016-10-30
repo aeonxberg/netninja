@@ -132,7 +132,6 @@ namespace NetNinja.ViewModel
 
         private void OpenNinjaDisplay()
         {
-            MessageBox.Show("StoreViewModel: " + SelectedNinja.Name);
             NinjaWindow displayWindow = new NinjaWindow(); 
             displayWindow.Show();           
             Application.Current.Windows[0].Close();

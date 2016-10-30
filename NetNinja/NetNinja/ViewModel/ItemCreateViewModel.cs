@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -113,7 +114,7 @@ namespace NetNinja.ViewModel
             }
             else
             {
-
+                MessageBox.Show("No item has been selected for deletion.");
             }
 
         }
@@ -124,16 +125,43 @@ namespace NetNinja.ViewModel
             /* FIELDS ENABLED WHEN NO ITEM SELECTED
              * ADD ITEM TO DATABASE HERE
              */
+            Regex rgx = new Regex("^[0 - 9] +$");
 
-            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            if (createNewItem())
             {
-                context.Equipments.Add(_selectedItem);
-                context.SaveChanges();
+                using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+                {
+                    context.Equipments.Add(_selectedItem);
+                    context.SaveChanges();
+                }
+                ItemCreateWindow itemCreateWindow = new ItemCreateWindow();
+                Application.Current.Windows[0].Close();
+                itemCreateWindow.Show();
             }
-            ItemCreateWindow itemCreateWindow = new ItemCreateWindow();
-            Application.Current.Windows[0].Close();
-            itemCreateWindow.Show();
+            else
+            {
+                MessageBox.Show("Something went wrong. 3 Or more characters for the name and whole integers for the stats and price.");
 
+            }
+        }
+        private bool createNewItem()
+        {
+            Regex rgx = new Regex("^[0 - 9] +$");
+            bool createItem = true;
+
+            if (_selectedItem.Name.Length < 3)
+                createItem = false;
+            if (!System.Text.RegularExpressions.Regex.IsMatch(_selectedItem.Strength + "", "^[0 - 9] +$"))
+                createItem = false;
+            if (!System.Text.RegularExpressions.Regex.IsMatch(_selectedItem.Intelligence + "", "^[0 - 9] +$"))
+                createItem = false;
+            if (!System.Text.RegularExpressions.Regex.IsMatch(_selectedItem.Agility + "", "^[0 - 9] +$"))
+                createItem = false;
+            if (!System.Text.RegularExpressions.Regex.IsMatch(_selectedItem.Price + "", "^[0 - 9] +$"))
+                createItem = false;
+            if (_selectedItem.Category == null)
+                createItem = false;
+            return createItem;
         }
     }
 }
