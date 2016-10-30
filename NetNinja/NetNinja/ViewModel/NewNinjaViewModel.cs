@@ -18,6 +18,7 @@ namespace NetNinja.ViewModel
         private ObservableCollection<NetNinjas.Ninja> _ninjaList;
         private NetNinjas.Ninja c;
         private string _name;
+        private Ninja _selectedNinja;
 
         public ICommand saveNinjaCommand { get; private set; }
         public ICommand deleteNinjaCommand { get; private set; }
@@ -96,8 +97,11 @@ namespace NetNinja.ViewModel
             /* ONLY ENABLED WHEN NINJA IS SELECTED FROM COMBOBOX
              * DELETE SELECTED NINJA
              */
-            throw new NotImplementedException();
-
+            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            {
+                context.Ninjas.Remove(_selectedNinja);
+                context.SaveChanges();
+            }
         }
     }
 }

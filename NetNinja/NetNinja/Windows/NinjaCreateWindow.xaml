@@ -18,7 +18,7 @@
         <Button x:Name="saveNinjaBtn" Command="{Binding saveNinjaCommand}" Content="Save" HorizontalAlignment="Left" Margin="60,326,0,0" VerticalAlignment="Top" Width="75" Click="createNinjaBtn_Click"/>
         <Label x:Name="ninja" Content="Ninja:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="ninjaComboBox" ItemsSource="{Binding NinjaList}" DisplayMemberPath="Name" Text="Select Ninja" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ninjaComboBox_SelectionChanged" SelectedIndex="0"/>
-        <Button x:Name="deleteNinjaBtn" Content="Delete" HorizontalAlignment="Left" Margin="156,326,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="deleteNinjaBtn" Command="{Binding deleteNinjaCommand}" Content="Delete" HorizontalAlignment="Left" Margin="156,326,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="backBtn" Command="{Binding backCommand}" Content="Back" HorizontalAlignment="Left" Margin="109,356,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
