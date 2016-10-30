@@ -26,10 +26,6 @@ namespace NetNinja.Windows
             InitializeComponent();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -37,6 +33,11 @@ namespace NetNinja.Windows
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

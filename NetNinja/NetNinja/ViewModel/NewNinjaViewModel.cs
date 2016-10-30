@@ -18,6 +18,7 @@ namespace NetNinja.ViewModel
         private ObservableCollection<NetNinjas.Ninja> _ninjaList;
         private NetNinjas.Ninja c;
         private string _name;
+        private string _imageURL;
         private Ninja _selectedNinja;
 
         public ICommand saveNinjaCommand { get; private set; }
@@ -29,7 +30,11 @@ namespace NetNinja.ViewModel
             get { return _ninjaList; }
             set { _ninjaList = value; RaisePropertyChanged("NinjaList"); }
         }
-        
+        public string ImageURL
+        {
+            get { return _imageURL; }
+            set { _imageURL = value; RaisePropertyChanged("ImageURL"); }
+        }
         public string NinjaName
         {
             get { return _name; }
@@ -76,20 +81,20 @@ namespace NetNinja.ViewModel
         {
             Ninja n = new Ninja();
             n.Name = _name;
+            n.ImageURL = _imageURL;
             n.Agility = Math.Abs(new Random().Next(0, 30));
             n.Intelligence = Math.Abs(new Random().Next(0, 30));
             n.Strength = Math.Abs(new Random().Next(0, 30));
             n.Gold = Math.Abs(new Random().Next(100, 1000));
-            Console.WriteLine("Ninja Name: " + n.Name);
             
             using (var context = new NetNinjas.NetNinjaDatabaseEntities())
             {
                 context.Ninjas.Add(n);
                 context.SaveChanges();
             }
-            StoreWindow storeWindow = new StoreWindow();   
-            Application.Current.Windows[0].Close();         
-            storeWindow.Show();
+            NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
+            Application.Current.Windows[0].Close();
+            ninjaCreateWindow.Show();
         }
 
         private void DeleteNinjaMethod()
@@ -99,9 +104,13 @@ namespace NetNinja.ViewModel
              */
             using (var context = new NetNinjas.NetNinjaDatabaseEntities())
             {
+                context.Ninjas.Attach(_selectedNinja);
                 context.Ninjas.Remove(_selectedNinja);
                 context.SaveChanges();
             }
+            NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
+            Application.Current.Windows[0].Close();
+            ninjaCreateWindow.Show();
         }
     }
 }

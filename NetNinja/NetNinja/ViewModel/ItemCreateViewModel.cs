@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NetNinja.Windows;
+using NetNinjas;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,32 +13,90 @@ using System.Windows.Input;
 
 namespace NetNinja.ViewModel
 {
-    public class ItemCreateViewModel
+    public class ItemCreateViewModel : ViewModelBase
     {
+        // FIELDS
+        private string _name;
+        private string _strength;
+        private string _intelligence;
+        private string _agility;
+        private string _price;
+        private string _selectedCategory;
+        private string _imageURL;
+
+        // PROPERTIES
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; RaisePropertyChanged("Name"); }
+        }
+        public string Strength
+        {
+            get { return _strength; }
+            set { _strength = value; RaisePropertyChanged("Strength"); }
+        }
+        public string Intelligence
+        {
+            get { return _intelligence; }
+            set { _intelligence = value; RaisePropertyChanged("Intelligence"); }
+        }
+        public string Agility
+        {
+            get { return _agility; }
+            set { _agility = value; RaisePropertyChanged("Agility"); }
+        }
+        public string Price
+        {
+            get { return _price; }
+            set { _price = value; RaisePropertyChanged("Price"); }
+        }
+        public string SelectedCategory
+        {
+            get { return _selectedCategory; }
+            set { _selectedCategory = value; RaisePropertyChanged("SelectedCategory"); }
+        }
+        public string ImageURL
+        {
+            get { return _imageURL; }
+            set { _imageURL = value; RaisePropertyChanged("ImageURL"); }
+        }
+
+
+
 
         //GET COLLECTION FROM DATABASE
         public ICommand newItemCommand { get; private set; }
         public ICommand deleteItemCommand { get; private set; }
         public ICommand backCommand { get; private set; }
-        
-        //public Ninja.Domain.Equipment _selectedItem;
-        //public ObservableCollection<Ninja.Domain.Equipment> _equipmentList;
-        //COLLECTION FOR CATEGORIES? _categoryList;
 
-       
-        /*public ObservabeCollection<Ninja.Domain.Equipment> EquipmentList
+        public NetNinjas.Equipment _selectedItem;
+        public ObservableCollection<NetNinjas.Equipment> _equipmentList;
+        public ObservableCollection<string> _categoryList;
+
+
+        public ObservableCollection<NetNinjas.Equipment> EquipmentList
         {
-            get{ return _equipmentList;}
-            set{ _equipmentList = value; RaisePropertyChanged("EquipmentList");}
+            get { return _equipmentList; }
+            set { _equipmentList = value; RaisePropertyChanged("EquipmentList"); }
         }
-         */
 
+        public ObservableCollection<string> CategoryList
+        {
+            get { return _categoryList; }
+            set { _categoryList = value; RaisePropertyChanged("CategoryList"); }
+        }
+
+        public NetNinjas.Equipment SelectedItem
+        {
+            get { return _selectedItem; }
+            set { _selectedItem = value; RaisePropertyChanged("SelectedItem"); }
+        }
+
+        // CONSTRUCTOR
         public ItemCreateViewModel()
         {
-            /*
-             * this._selectedNinja = SELECTEDNINJA;
-             * 
-             */
+
+            _categoryList = new ObservableCollection<string>();
             loadEquipment();
             loadCategories();
 
@@ -55,16 +114,18 @@ namespace NetNinja.ViewModel
 
         private void loadCategories()
         {
-            //USE DB QUERY TO GET ALL CATEGORIES?
-            //Insert each category in _categoryList
-            //throw new NotImplementedException();
+            /*FILL THE CATEGORY LIST*/
+            _categoryList.Add("Head");
+            _categoryList.Add("Shoulders");
+            _categoryList.Add("Chest");
+            _categoryList.Add("Pants");
+            _categoryList.Add("Boots");
         }
 
         private void loadEquipment()
         {
-            //USE A LOOP TO
-            //  Add all equipment from DB to _equipmentList;
-            //throw new NotImplementedException();
+            using (var context = new NetNinjaDatabaseEntities())
+                _equipmentList = new ObservableCollection<NetNinjas.Equipment>(context.Equipments);
         }
 
         /* FIELDS ENABLED WHEN NO ITEM SELECTED
@@ -76,14 +137,44 @@ namespace NetNinja.ViewModel
         {
             /* ONLY ENABLED WHEN ITEM SELECTED FROM COMBOBOX
              * REMOVE ITEM FROM DATABASE HERE
-             */ throw new NotImplementedException();
+             */
+            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            {
+                context.Equipments.Attach(_selectedItem);
+                context.Equipments.Remove(_selectedItem);
+                context.SaveChanges();
+            }
+            ItemCreateWindow itemCreateWindow = new ItemCreateWindow();
+            Application.Current.Windows[0].Close();
+            itemCreateWindow.Show();
+
         }
+
 
         private void CreateItemMethod()
         {
             /* FIELDS ENABLED WHEN NO ITEM SELECTED
              * ADD ITEM TO DATABASE HERE
-             */ throw new NotImplementedException();
+             */
+
+            Equipment e = new Equipment();
+            e.Name = _name;
+            e.Strength = Convert.ToInt32(_strength);
+            e.Intelligence = Convert.ToInt32(_intelligence);
+            e.Agility = Convert.ToInt32(_agility);
+            e.Price = Convert.ToInt32(_price);
+            e.Category = _selectedCategory;
+            e.ImageURL = _imageURL;
+
+            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            {
+                context.Equipments.Add(e);
+                context.SaveChanges();
+            }
+            ItemCreateWindow itemCreateWindow = new ItemCreateWindow();
+            Application.Current.Windows[0].Close();
+            itemCreateWindow.Show();
+
         }
     }
 }

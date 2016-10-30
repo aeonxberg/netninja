@@ -12,7 +12,7 @@
         <Label x:Name="ninjaName" Content="Name:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
         <Label x:Name="ninjaImage" Content="ImageUrl:" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="ninjaNameBox"  Text="{Binding NinjaName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="80,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="ninjaNameBox_TextChanged"/>
-        <TextBox x:Name="ninjaUrlBox" HorizontalAlignment="Left" Height="23" Margin="80,64,0,0" TextWrapping="Wrap" Text="Insert URL" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ninjaUrlBox" Text="{Binding ImageURL, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="80,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="206" VerticalAlignment="Top" Width="171" Margin="60,94,0,0"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="206" VerticalAlignment="Top" Width="171" Margin="60,94,0,0"/>
         <Button x:Name="saveNinjaBtn" Command="{Binding saveNinjaCommand}" Content="Save" HorizontalAlignment="Left" Margin="60,326,0,0" VerticalAlignment="Top" Width="75" Click="createNinjaBtn_Click"/>

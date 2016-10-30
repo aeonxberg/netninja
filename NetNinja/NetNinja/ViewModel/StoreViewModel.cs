@@ -131,7 +131,7 @@ namespace NetNinja.ViewModel
 
         private void OpenNinjaDisplay()
         {
-            NinjaWindow displayWindow = new NinjaWindow();
+            NinjaWindow displayWindow = new NinjaWindow();            
             Application.Current.Windows[0].Close();
             displayWindow.Show();
         }
@@ -180,12 +180,7 @@ namespace NetNinja.ViewModel
             get { return displayItem; }
             set { displayItem = value; RaisePropertyChanged("SelectedItem"); CanBuy = true; }
         }
-
-        public NetNinjas.Ninja SelectedNinja
-        {
-            get { return _selectedNinja; }
-            set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); }
-        }
+        
 
         private void switchButtonState(Ninja _selectedNinja)
         {
