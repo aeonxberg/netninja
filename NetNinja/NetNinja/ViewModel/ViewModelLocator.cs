@@ -73,7 +73,6 @@ namespace NetNinja.ViewModel
         {
             get
             {
-                MessageBox.Show("ViewModelLocator: " + StoreViewModel.SelectedNinja.Name);
                 return new NinjaViewModel(ServiceLocator.Current.GetInstance<StoreViewModel>().SelectedNinja);
             }
         }
