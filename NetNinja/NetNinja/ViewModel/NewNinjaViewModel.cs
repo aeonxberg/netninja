@@ -21,6 +21,7 @@ namespace NetNinja.ViewModel
 
         public ICommand saveNinjaCommand { get; private set; }
         public ICommand deleteNinjaCommand { get; private set; }
+        public ICommand backCommand { get; private set; }
        
         public ObservableCollection<NetNinjas.Ninja> NinjaList
         {
@@ -40,6 +41,7 @@ namespace NetNinja.ViewModel
             loadNinjas();
             saveNinjaCommand = new RelayCommand(SaveNinjaMethod);
             deleteNinjaCommand = new RelayCommand(DeleteNinjaMethod);
+            backCommand = new RelayCommand(BackMethod);
         }
 
         public NewNinjaViewModel(NetNinjas.Ninja c)
@@ -58,6 +60,12 @@ namespace NetNinja.ViewModel
             
         }
 
+        private void BackMethod()
+        {
+            StoreWindow storeWindow = new StoreWindow();
+            Application.Current.Windows[0].Close();
+            storeWindow.Show();
+        }
         /* FIELDS ENABLED WHEN NO NINJA SELECTED
          * IF ITEM IS SELECTED FROM COMBOBOX 
          * FILL FIELDS WITH NINJA.<DATA>

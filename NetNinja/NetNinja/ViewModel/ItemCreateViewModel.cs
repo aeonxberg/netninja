@@ -1,11 +1,13 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using NetNinja.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace NetNinja.ViewModel
@@ -16,6 +18,7 @@ namespace NetNinja.ViewModel
         //GET COLLECTION FROM DATABASE
         public ICommand newItemCommand { get; private set; }
         public ICommand deleteItemCommand { get; private set; }
+        public ICommand backCommand { get; private set; }
         
         //public Ninja.Domain.Equipment _selectedItem;
         //public ObservableCollection<Ninja.Domain.Equipment> _equipmentList;
@@ -40,6 +43,14 @@ namespace NetNinja.ViewModel
 
             newItemCommand = new RelayCommand(CreateItemMethod);
             deleteItemCommand = new RelayCommand(DeleteItemMethod);
+            backCommand = new RelayCommand(BackMethod);
+        }
+
+        private void BackMethod()
+        {
+            StoreWindow storeWindow = new StoreWindow();
+            Application.Current.Windows[0].Close();
+            storeWindow.Show();
         }
 
         private void loadCategories()
