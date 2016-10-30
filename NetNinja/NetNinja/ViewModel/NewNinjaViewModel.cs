@@ -79,8 +79,10 @@ namespace NetNinja.ViewModel
 
         private void SaveNinjaMethod()
         {
+            bool succeded = true;
             if (_name != null && _imageURL != null)
             {
+                
                 Ninja n = new Ninja();
                 n.Name = _name;
                 n.ImageURL = _imageURL;
@@ -89,14 +91,25 @@ namespace NetNinja.ViewModel
                 n.Strength = 0;
                 n.Gold = Math.Abs(new Random().Next(100, 10000));
 
-                using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+                foreach(Ninja compareNinja in NinjaList)
                 {
-                    context.Ninjas.Add(n);
-                    context.SaveChanges();
+                    if(compareNinja.Name == n.Name)
+                    {
+                        succeded = false;
+                        MessageBox.Show("This name already exists, choose a different one.");
+                    }
                 }
-                NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
-                Application.Current.Windows[0].Close();
-                ninjaCreateWindow.Show();
+                if (succeded == true)
+                {
+                    using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+                    {
+                        context.Ninjas.Add(n);
+                        context.SaveChanges();
+                    }
+                    NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
+                    Application.Current.Windows[0].Close();
+                    ninjaCreateWindow.Show();
+                }
             }
             else
             {
