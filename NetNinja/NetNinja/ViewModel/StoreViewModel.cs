@@ -138,6 +138,11 @@ namespace NetNinja.ViewModel
             get { return displayItem; }
             set { displayItem = value; RaisePropertyChanged("SelectedItem"); CanBuy = true; }
         }
+        public NetNinjas.Ninja SelectedNinja
+        {
+            get { return _selectedNinja; }
+            set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja");}
+        }
 
         private void HeadBtnMethod()
         {
