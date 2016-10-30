@@ -7,6 +7,7 @@ using System.Linq;
 using NetNinja.Windows;
 using System.ComponentModel;
 using NetNinjas;
+using System.Windows;
 
 namespace NetNinja.ViewModel
 {
@@ -23,6 +24,7 @@ namespace NetNinja.ViewModel
         public ICommand newItemCommand { get; private set; }
         public ICommand showNinjaCommand { get; private set; }
         public ICommand newNinjaCommand { get; private set; }
+        public ICommand refreshCommand { get; private set; }
 
         string displayCategory = null;
         NetNinjas.Equipment displayItem;
@@ -81,7 +83,13 @@ namespace NetNinja.ViewModel
             newItemCommand = new RelayCommand(OpenItemCreator);
             showNinjaCommand = new RelayCommand(OpenNinjaDisplay);
             newNinjaCommand = new RelayCommand(OpenNewNinjaDisplay);
+            refreshCommand = new RelayCommand(RefreshMethod);
 
+        }
+
+        private void RefreshMethod()
+        {
+            loadNinjas();
         }
 
         private void loadStoreItems()
@@ -99,18 +107,21 @@ namespace NetNinja.ViewModel
         private void OpenNewNinjaDisplay()
         {
             NinjaCreateWindow ninjaCreateWindow = new NinjaCreateWindow();
+            Application.Current.Windows[0].Close();
             ninjaCreateWindow.Show();
         }
 
         private void OpenNinjaDisplay()
         {
             NinjaWindow displayWindow = new NinjaWindow();
+            Application.Current.Windows[0].Close();
             displayWindow.Show();
         }
 
         private void OpenItemCreator()
         {
             ItemCreateWindow createWindow = new ItemCreateWindow();
+            Application.Current.Windows[0].Close();
             createWindow.Show();
         }
 
@@ -155,7 +166,7 @@ namespace NetNinja.ViewModel
         public NetNinjas.Ninja SelectedNinja
         {
             get { return _selectedNinja; }
-            set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); switchButtonState(_selectedNinja); }
+            set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); }
         }
 
         private void switchButtonState(Ninja _selectedNinja)

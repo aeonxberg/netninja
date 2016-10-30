@@ -66,5 +66,10 @@ namespace NetNinja.Windows
         {
 
         }
+
+        private void refreshBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

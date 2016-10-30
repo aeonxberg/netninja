@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using NetNinja.Windows;
 using NetNinjas;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace NetNinja.ViewModel
@@ -75,7 +77,10 @@ namespace NetNinja.ViewModel
             {
                 context.Ninjas.Add(n);
                 context.SaveChanges();
-            }            
+            }
+            StoreWindow storeWindow = new StoreWindow();   
+            Application.Current.Windows[0].Close();         
+            storeWindow.Show();
         }
 
         private void DeleteNinjaMethod()

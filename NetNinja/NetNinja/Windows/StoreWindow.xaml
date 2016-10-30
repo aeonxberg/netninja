@@ -64,7 +64,8 @@
             <Button x:Name="newItemBtn" Command ="{Binding newItemCommand}" Content="Create New Item" Height="22" VerticalAlignment="Top" Width="121"/>
             <Button x:Name="newNinjaBtn" Command ="{Binding newNinjaCommand}" Content="Create New Ninja" Height="22" VerticalAlignment="Top" Width="205"/>
             <Button x:Name="showNinjaBtn" Command ="{Binding showNinjaCommand}"  Content="Show Ninja" Height="22" VerticalAlignment="Top" Width="161" Click="showNinjaBtn_Click"/>
-            <ComboBox x:Name="ninjaSelectBox" ItemsSource="{Binding NinjaCollection}" SelectedItem="{Binding SelectedNinja}" DisplayMemberPath="Name"  IsSynchronizedWithCurrentItem="True" SelectedIndex="0" IsEditable="True" IsReadOnly="True" Margin="0,0,0,0.4" VerticalAlignment="Stretch" Width="305"/>
+            <ComboBox x:Name="ninjaSelectBox" ItemsSource="{Binding NinjaCollection}" SelectedItem="{Binding SelectedNinja}" DisplayMemberPath="Name"  IsSynchronizedWithCurrentItem="True" SelectedIndex="0" IsEditable="True" IsReadOnly="True" Margin="0,0,0,0.4" VerticalAlignment="Stretch" Width="228"/>
+            <Button x:Name="refreshBtn" Content="Refresh" Command ="{Binding refreshCommand}" Height="22.4" VerticalAlignment="Top" Width="75" Click="refreshBtn_Click"/>
         </ToolBar>
     </Grid>
 </Window>

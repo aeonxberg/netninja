@@ -57,7 +57,7 @@
         <Label Content="AGL:" HorizontalAlignment="Left" Margin="533,49,0,0" VerticalAlignment="Top"/>
         <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="534,275,0,0"/>
         <Label Content="AGL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="534,220,0,0"/>
-        <Label x:Name="ninjaName"  Content="{Binding SelectedNinja.Name} " HorizontalAlignment="Left" Margin="76,7,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ninjaName"  Content="{Binding SelectedNinja.Name}" HorizontalAlignment="Left" Margin="76,7,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
