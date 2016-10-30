@@ -54,10 +54,6 @@ namespace NetNinja.ViewModel
                 NinjaList = new ObservableCollection<NetNinjas.Ninja>();
             }
             
-            // Nee geen loop, zie hier boven
-            //USE A LOOP TO
-            // Get all Ninjas FROM DB and insert them in _ninjaList;
-            //throw new NotImplementedException();
         }
 
         /* FIELDS ENABLED WHEN NO NINJA SELECTED

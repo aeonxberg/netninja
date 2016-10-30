@@ -92,8 +92,8 @@ namespace NetNinja.ViewModel
 
         private void loadNinjas()
         {
-            using (var context = new NetNinjaDatabaseEntities())
-                _ninjaCollection = new ObservableCollection<NetNinjas.Ninja>(context.Ninjas);//ERROR
+           using (var context = new NetNinjaDatabaseEntities())
+               _ninjaCollection = new ObservableCollection<NetNinjas.Ninja>(context.Ninjas);//ERROR
         }
 
         private void OpenNewNinjaDisplay()
