@@ -79,7 +79,7 @@ namespace NetNinja.ViewModel
 
         private void SaveNinjaMethod()
         {
-            bool succeded = true;
+            bool succeeded = true;
             if (_name != null && _imageURL != null)
             {
                 
@@ -95,11 +95,11 @@ namespace NetNinja.ViewModel
                 {
                     if(compareNinja.Name == n.Name)
                     {
-                        succeded = false;
+                        succeeded = false;
                         MessageBox.Show("This name already exists, choose a different one.");
                     }
                 }
-                if (succeded == true)
+                if (succeeded == true)
                 {
                     using (var context = new NetNinjas.NetNinjaDatabaseEntities())
                     {
