@@ -60,12 +60,17 @@ namespace NetNinja.ViewModel
 
         private void SaveNinjaMethod()
         {
-            /* IF NINJA SELECTED
-             *   UPDATE SELECTEDNINJA
-             * ELSE
-             *   CREATE NEW NINJA
-             */
-            throw new NotImplementedException();
+            Ninja n = new Ninja();
+            n.Agility = Math.Abs(new Random().Next(0, 30));
+            n.Intelligence = Math.Abs(new Random().Next(0, 30));
+            n.Strength = Math.Abs(new Random().Next(0, 30));
+            n.Gold = Math.Abs(new Random().Next(100, 1000));
+
+            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            {
+                context.Ninjas.Add(n);
+                context.SaveChanges();
+            }            
         }
 
         private void DeleteNinjaMethod()

@@ -62,5 +62,9 @@ namespace NetNinja.Windows
 
         }
 
+        private void showNinjaBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
