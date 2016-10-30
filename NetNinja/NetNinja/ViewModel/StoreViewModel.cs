@@ -27,6 +27,19 @@ namespace NetNinja.ViewModel
         string displayCategory = null;
         NetNinjas.Equipment displayItem;
         NetNinjas.Ninja _selectedNinja;
+        bool btnEnabled = false;
+
+        public bool ButtonEnabled
+        {
+            get
+            {
+                return btnEnabled;
+            }
+            set
+            {
+                RaisePropertyChanged("btnEnabled");
+            }
+        }
 
         public ObservableCollection<NetNinjas.Equipment> EquipmentCollection
         {
@@ -138,10 +151,23 @@ namespace NetNinja.ViewModel
             get { return displayItem; }
             set { displayItem = value; RaisePropertyChanged("SelectedItem"); CanBuy = true; }
         }
+
         public NetNinjas.Ninja SelectedNinja
         {
             get { return _selectedNinja; }
-            set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja");}
+            set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); switchButtonState(_selectedNinja); }
+        }
+
+        private void switchButtonState(Ninja _selectedNinja)
+        {
+            if (_selectedNinja != null)
+            {
+                btnEnabled = true;
+            }
+            else
+            {
+                btnEnabled = false;
+            }
         }
 
         private void HeadBtnMethod()
