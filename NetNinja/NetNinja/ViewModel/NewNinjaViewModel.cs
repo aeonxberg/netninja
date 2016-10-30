@@ -52,13 +52,8 @@ namespace NetNinja.ViewModel
 
         private void loadNinjas()
         {
-            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
-            {
-                var compList = context.Ninjas.ToList();
-                var compVmList = compList.Select(c => new NewNinjaViewModel(c));
-                NinjaList = new ObservableCollection<NetNinjas.Ninja>();
-            }
-            
+            using (var context = new NetNinjaDatabaseEntities())
+                _ninjaList = new ObservableCollection<NetNinjas.Ninja>(context.Ninjas);
         }
 
         private void BackMethod()
