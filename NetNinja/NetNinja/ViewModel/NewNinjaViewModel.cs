@@ -35,6 +35,11 @@ namespace NetNinja.ViewModel
             get { return _name; }
             set { _name = value; RaisePropertyChanged("NinjaName"); }
         }
+        public Ninja SelectedNinja
+        {
+            get { return _selectedNinja; }
+            set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); }
+        }
         
 
         public NewNinjaViewModel()
