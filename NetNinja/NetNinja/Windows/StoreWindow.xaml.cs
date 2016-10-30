@@ -24,7 +24,6 @@ namespace NetNinja.Windows
         public StoreWindow()
         {
             InitializeComponent();
-            DataContext = new StoreViewModel();
             Closing += (s, e) => ViewModelLocator.Cleanup();
         }
 

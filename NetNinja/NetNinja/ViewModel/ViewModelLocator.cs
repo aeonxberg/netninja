@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using NetNinja.ViewModel;
+using System.Windows;
 
 namespace NetNinja.ViewModel
 {
@@ -22,16 +23,18 @@ namespace NetNinja.ViewModel
     */
         public class ViewModelLocator
         {
-            static ViewModelLocator()
-            {
-                ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+        static ViewModelLocator()
+        {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-                //Hier registreren we een SongListViewModel
-                //Waarom doen we dit? Denk hier alvast over na.
-                //Het antwoord op deze vraag komt over een tijdje.
-                SimpleIoc.Default.Register<StoreViewModel>();
-
-            }
+            //Hier registreren we een SongListViewModel
+            //Waarom doen we dit? Denk hier alvast over na.
+            //Het antwoord op deze vraag komt over een tijdje.
+            SimpleIoc.Default.Register<StoreViewModel>();
+            //SimpleIoc.Default.Register<NinjaViewModel>();
+            //SimpleIoc.Default.Register<NewNinjaViewModel>();
+            //SimpleIoc.Default.Register<ItemCreateViewModel>();
+        }
 
           public StoreViewModel StoreViewModel
             {
@@ -54,7 +57,7 @@ namespace NetNinja.ViewModel
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<EqpViewModel>();
+                return new EqpViewModel();
             }
         }
 
@@ -70,7 +73,8 @@ namespace NetNinja.ViewModel
         {
             get
             {
-                return new NinjaViewModel(StoreViewModel.SelectedNinja);
+                MessageBox.Show("ViewModelLocator: " + StoreViewModel.SelectedNinja.Name);
+                return new NinjaViewModel(ServiceLocator.Current.GetInstance<StoreViewModel>().SelectedNinja);
             }
         }
 

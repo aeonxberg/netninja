@@ -46,7 +46,6 @@ namespace NetNinja.ViewModel
         // CONSTRUCTOR
         public ItemCreateViewModel()
         {
-
             _selectedItem = new Equipment
             {
                 Name = "item name",
@@ -100,15 +99,22 @@ namespace NetNinja.ViewModel
             /* ONLY ENABLED WHEN ITEM SELECTED FROM COMBOBOX
              * REMOVE ITEM FROM DATABASE HERE
              */
-            using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+            if (_selectedItem != null)
             {
-                context.Equipments.Attach(_selectedItem);
-                context.Equipments.Remove(_selectedItem);
-                context.SaveChanges();
+                using (var context = new NetNinjas.NetNinjaDatabaseEntities())
+                {
+                    context.Equipments.Attach(_selectedItem);
+                    context.Equipments.Remove(_selectedItem);
+                    context.SaveChanges();
+                }
+                ItemCreateWindow itemCreateWindow = new ItemCreateWindow();
+                Application.Current.Windows[0].Close();
+                itemCreateWindow.Show();
             }
-            ItemCreateWindow itemCreateWindow = new ItemCreateWindow();
-            Application.Current.Windows[0].Close();
-            itemCreateWindow.Show();
+            else
+            {
+
+            }
 
         }
 

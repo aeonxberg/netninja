@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace NetNinja.ViewModel
 {
-    public class StoreViewModel : ViewModelBase
+    public class  StoreViewModel : ViewModelBase
     {
         private ObservableCollection<NetNinjas.Equipment> _equipmentCollection;
         private ObservableCollection<NetNinjas.Equipment> _selectedEquipmentCollection;
@@ -84,7 +84,7 @@ namespace NetNinja.ViewModel
             set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); }
         }
 
-        public StoreViewModel(/*NetNinjas.Ninja selectedNinja*/)
+        public  StoreViewModel(/*NetNinjas.Ninja selectedNinja*/)
         {
 
             _equipmentCollection = new ObservableCollection<NetNinjas.Equipment>();
@@ -108,6 +108,7 @@ namespace NetNinja.ViewModel
         private void RefreshMethod()
         {
             loadNinjas();
+            SelectedNinja = _selectedNinja;
         }
 
         private void loadStoreItems()
@@ -131,9 +132,10 @@ namespace NetNinja.ViewModel
 
         private void OpenNinjaDisplay()
         {
-            NinjaWindow displayWindow = new NinjaWindow();            
+            MessageBox.Show("StoreViewModel: " + SelectedNinja.Name);
+            NinjaWindow displayWindow = new NinjaWindow(); 
+            displayWindow.Show();           
             Application.Current.Windows[0].Close();
-            displayWindow.Show();
         }
 
         private void OpenItemCreator()

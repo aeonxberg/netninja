@@ -18,7 +18,7 @@ namespace NetNinja.ViewModel
         //Fill WITH ANY COMMANDS
         public ICommand backCommand { get; private set; }
         private ObservableCollection<NetNinjas.Equipment> _equipmentSet;
-        private NetNinjas.Ninja _selectedNinja;
+        private Ninja _selectedNinja;
         private string _name;
 
         //DATA BINDING FOR EQUIPMENTSET LABELS AND STUFF
@@ -33,7 +33,7 @@ namespace NetNinja.ViewModel
             }
         }
 
-        public NetNinjas.Ninja SelectedNinja
+        public Ninja SelectedNinja
         {
             get { return _selectedNinja; }
             set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); }
@@ -42,18 +42,19 @@ namespace NetNinja.ViewModel
 
 
 
-        public string Name{
-         get{ return _name; }
-          }
+        public string Name
+        {
+            get { return _name; }
+        }
          
 
-        public NinjaViewModel(NetNinjas.Ninja ninja)
+        public NinjaViewModel(Ninja ninja)
         {
-
+            MessageBox.Show("NinjaViewModel: " + ninja.Name);
             _equipmentSet = new ObservableCollection<NetNinjas.Equipment>();
             LoadEquipmentSet();
 
-            _selectedNinja = ninja;
+            SelectedNinja = ninja;
             _name = _selectedNinja.Name;
 
             // FILL WITH ANY RELAYCOMMANDS
