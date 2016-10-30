@@ -78,6 +78,11 @@ namespace NetNinja.ViewModel
                 RaisePropertyChanged("NinjaCollection");
             }
         }
+        public Ninja SelectedNinja
+        {
+            get { return _selectedNinja; }
+            set { _selectedNinja = value; RaisePropertyChanged("SelectedNinja"); }
+        }
 
         public StoreViewModel(/*NetNinjas.Ninja selectedNinja*/)
         {
