@@ -57,7 +57,7 @@
         <Button x:Name="chestBtn" Command ="{Binding chestBtnCommand}" Content="Chest" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="24,131,0,0" Click="chestBtn_Click"/>
         <Button x:Name="pantsBtn" Command ="{Binding pantsBtnCommand}" Content="Pants" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="24,160,0,0" Click="pantsBtn_Click"/>
         <Button x:Name="bootsBtn" Command ="{Binding bootsBtnCommand}" Content="Boots" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Height="24" Margin="24,190,0,0" Click="bootsBtn_Click"/>
-        <ToolBar HorizontalAlignment="Left" Margin="0,0,-0.2,0" VerticalAlignment="Top" Height="27" Width="573" Grid.ColumnSpan="2">
+        <ToolBar HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="673">
             <Button x:Name="newItemBtn" Command ="{Binding newItemCommand}" Content="Create New Item" Height="22" VerticalAlignment="Top" Width="121"/>
             <Button x:Name="newNinjaBtn" Command ="{Binding newNinjaCommand}" Content="Create New Ninja" Height="22" VerticalAlignment="Top" Width="170"/>
             <Button x:Name="showNinjaBtn" Command ="{Binding showNinjaCommand}"  Content="Show Ninja" Height="22" VerticalAlignment="Top" Width="114"/>

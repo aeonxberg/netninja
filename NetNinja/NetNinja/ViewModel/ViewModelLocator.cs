@@ -46,8 +46,6 @@ namespace NetNinja.ViewModel
         {
             get
             {
-                //De service locator gebruikt een 'singleton' patroon. 
-                //Het maakt niet uit hoevaak je een SongList aanvraagt, je krijgt altijd het zelfde object terug. 
                 return ServiceLocator.Current.GetInstance<ItemCreateViewModel>();
             }
         }
@@ -68,25 +66,14 @@ namespace NetNinja.ViewModel
             }
         }
 
-        /*           public AddSongViewModel AddSong
-                   {
-                       get
-                       {
-                           //De service locator gebruikt een 'singleton' patroon. 
-                           //Het maakt niet uit hoevaak je een SongList aanvraagt, je krijgt altijd het zelfde object terug. 
-                           return new AddSongViewModel(this.SongList);
-                       }
-                   }
+        public NinjaViewModel NinjaViewModel
+        {
+            get
+            {
+                return new NinjaViewModel(StoreViewModel.SelectedNinja);
+            }
+        }
 
-                   public UpdateSongViewModel UpdateSong
-                   {
-                       get
-                       {
-                           //Hmmm... Wat moeten we hier nu returnen? Denk er maar eens goed over na!
-                           return null;
-                       }
-                   }
-         */
         public static void Cleanup()
             {
             }
