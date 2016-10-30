@@ -82,12 +82,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Domain\categoryEnum.cs" />
-    <Compile Include="Domain\DummyEquipmentRepository.cs" />
-    <Compile Include="Domain\IEqpRepository.cs" />
-    <Compile Include="Domain\Equipment.cs" />
-    <Compile Include="Domain\Ninja.cs" />
-    <Compile Include="Domain\StoreModel.cs" />
     <Compile Include="ViewModel\EqpViewModel.cs" />
     <Compile Include="ViewModel\ItemCreateViewModel.cs" />
     <Compile Include="ViewModel\NewNinjaViewModel.cs" />

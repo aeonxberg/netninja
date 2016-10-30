@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using NetNinja.Domain;
 using NetNinjas;
 using System;
 using System.Collections.Generic;
@@ -14,13 +13,13 @@ namespace NetNinja.ViewModel
 {
     public class NewNinjaViewModel :ViewModelBase
     {
-        private ObservableCollection<Domain.Ninja> _ninjaList;
+        private ObservableCollection<NetNinjas.Ninja> _ninjaList;
         private NetNinjas.Ninja c;
 
         public ICommand saveNinjaCommand { get; private set; }
         public ICommand deleteNinjaCommand { get; private set; }
        
-        public ObservableCollection<Domain.Ninja> NinjaList
+        public ObservableCollection<NetNinjas.Ninja> NinjaList
         {
             get { return _ninjaList; }
             set { _ninjaList = value; RaisePropertyChanged("NinjaList"); }
@@ -45,7 +44,7 @@ namespace NetNinja.ViewModel
             {
                 var compList = context.Ninjas.ToList();
                 var compVmList = compList.Select(c => new NewNinjaViewModel(c));
-                NinjaList = new ObservableCollection<Domain.Ninja>();
+                NinjaList = new ObservableCollection<NetNinjas.Ninja>();
             }
             
             // Nee geen loop, zie hier boven

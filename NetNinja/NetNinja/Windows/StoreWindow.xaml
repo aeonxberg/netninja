@@ -62,7 +62,7 @@
             <Button x:Name="newItemBtn" Command ="{Binding newItemCommand}" Content="Create New Item" Height="22" VerticalAlignment="Top" Width="121"/>
             <Button x:Name="newNinjaBtn" Command ="{Binding newNinjaCommand}" Content="Create New Ninja" Height="22" VerticalAlignment="Top" Width="170"/>
             <Button x:Name="showNinjaBtn" Command ="{Binding showNinjaCommand}"  Content="Show Ninja" Height="22" VerticalAlignment="Top" Width="114"/>
-            <ComboBox x:Name="ninjaSelectBox" Text="Select Ninja"  IsEditable="False" Height="22.4" Margin="0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="ninjaSelectBox" ItemsSource="{Binding NinjaCollection}" DisplayMemberPath="Name" Text="Select Ninja"  IsEditable="False" Margin="0,0,0,0.4" VerticalAlignment="Stretch" Width="120"/>
         </ToolBar>
     </Grid>
 </Window>

@@ -1,5 +1,4 @@
-﻿using NetNinja.Domain;
-using NetNinja.ViewModel;
+﻿using NetNinja.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +20,7 @@ namespace NetNinja.Windows
     /// </summary>
     public partial class StoreWindow : Window
     {
-        CategoryEnum displaySelection;
+        string displaySelection;
         public StoreWindow()
         {
             InitializeComponent();

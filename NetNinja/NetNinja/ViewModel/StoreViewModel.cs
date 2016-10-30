@@ -4,15 +4,17 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using System.Linq;
-using NetNinja.Domain;
 using NetNinja.Windows;
 using System.ComponentModel;
+using NetNinjas;
 
 namespace NetNinja.ViewModel
 {
     public class StoreViewModel : ViewModelBase
     {
-        private ObservableCollection<Equipment> _equipmentCollection;
+        private ObservableCollection<NetNinjas.Equipment> _equipmentCollection;
+        private ObservableCollection<NetNinjas.Ninja> _ninjaCollection;
+
         public ICommand headBtnCommand { get; private set; }
         public ICommand shoulderBtnCommand { get; private set; }
         public ICommand chestBtnCommand { get; private set; }
@@ -22,10 +24,11 @@ namespace NetNinja.ViewModel
         public ICommand showNinjaCommand { get; private set; }
         public ICommand newNinjaCommand { get; private set; }
 
-        CategoryEnum displayCategory = CategoryEnum.Head;
-        Equipment displayItem;
+        string displayCategory = null;
+        NetNinjas.Equipment displayItem;
+        NetNinjas.Ninja _selectedNinja;
 
-        public ObservableCollection<Equipment> EquipmentCollection
+        public ObservableCollection<NetNinjas.Equipment> EquipmentCollection
         {
             get
             {
@@ -37,14 +40,25 @@ namespace NetNinja.ViewModel
             }
         }
 
-        public StoreViewModel(/*<DOMAIN> SELECTEDNINJA*/)
+        public ObservableCollection<NetNinjas.Ninja> NinjaCollection
         {
-            /*
-             * this._selectedNinja = SELECTEDNINJA;
-             */
+            get
+            {
+                return _ninjaCollection;
+            }
+            set
+            {
+                RaisePropertyChanged("NinjaCollection");
+            }
+        }
 
-            _equipmentCollection = new ObservableCollection<Equipment/*FROM DOMAIN*/>();
+        public StoreViewModel(/*NetNinjas.Ninja selectedNinja*/)
+        {
+          
+            _equipmentCollection = new ObservableCollection<NetNinjas.Equipment>();
+            _ninjaCollection = new ObservableCollection<NetNinjas.Ninja>();
             loadStoreItems();
+            loadNinjas();
 
             headBtnCommand = new RelayCommand(HeadBtnMethod);
             shoulderBtnCommand = new RelayCommand(ShoulderBtnMethod);
@@ -54,6 +68,18 @@ namespace NetNinja.ViewModel
             newItemCommand = new RelayCommand(OpenItemCreator);
             showNinjaCommand = new RelayCommand(OpenNinjaDisplay);
             newNinjaCommand = new RelayCommand(OpenNewNinjaDisplay);
+
+        }
+
+        private void loadStoreItems()
+        {
+            using (var context = new NetNinjaDatabaseEntities())
+                _equipmentCollection = new ObservableCollection<NetNinjas.Equipment>(context.Equipments);//ERROR
+        }
+        private void loadNinjas()
+        {
+            using (var context = new NetNinjaDatabaseEntities())
+                _ninjaCollection = new ObservableCollection<NetNinjas.Ninja>(context.Ninjas);//ERROR
         }
 
         private void OpenNewNinjaDisplay()
@@ -72,16 +98,6 @@ namespace NetNinja.ViewModel
         {
             ItemCreateWindow createWindow = new ItemCreateWindow();
             createWindow.Show();
-        }
-
-        private void loadStoreItems()
-        {
-            /*
-              using (var context = new NinjaDBContainer())
-              {
-                  _equipmentCollection = new ObservableCollection<DOMAIN EQUIPMENT>(context. EQUIPMENT SET);
-              }
-            */
         }
 
         public Boolean CanBuy
@@ -116,7 +132,7 @@ namespace NetNinja.ViewModel
             return true;
         }
 
-        public Equipment SelectedItem
+        public NetNinjas.Equipment SelectedItem
         {
             get { return displayItem; }
             set { displayItem = value; RaisePropertyChanged("SelectedItem"); CanBuy = true; }
@@ -124,40 +140,40 @@ namespace NetNinja.ViewModel
 
         private void HeadBtnMethod()
         {
-            displayCategory = CategoryEnum.Head;
+            displayCategory = "Head";
             testData();
             displayCorrectItems();
         }
 
         private void BootsBtnMethod()
         {
-            displayCategory = CategoryEnum.Boots;
+            displayCategory = "Boots";
             displayCorrectItems();
         }
 
         private void PantsBtnMethod()
         {
-            displayCategory = CategoryEnum.Pants;
+            displayCategory = "Pants";
             displayCorrectItems();
         }
 
         private void ChestBtnMethod()
         {
-            displayCategory = CategoryEnum.Chest;
+            displayCategory = "Chest";
             testData();
             displayCorrectItems();
         }
 
         private void ShoulderBtnMethod()
         {
-            displayCategory = CategoryEnum.Shoulders;
+            displayCategory = "Shoulders";
             displayCorrectItems();
         }
 
         private void displayCorrectItems()
         {
             //Filter collection to only show correct category
-            ObservableCollection<Equipment> categorizedCollection = new ObservableCollection<Equipment>();
+            ObservableCollection<NetNinjas.Equipment> categorizedCollection = new ObservableCollection<NetNinjas.Equipment>();
             loadStoreItems();
 
 
@@ -188,41 +204,41 @@ namespace NetNinja.ViewModel
                   */
         }
 
-        private ObservableCollection<Equipment> testData()
+        private ObservableCollection<NetNinjas.Equipment> testData()
         {
             _equipmentCollection.Clear();
-            if (displayCategory == CategoryEnum.Head)
+            if (displayCategory.Equals("Head"))
             {
-                _equipmentCollection.Add(new Equipment
+                _equipmentCollection.Add(new NetNinjas.Equipment
                 {
                     Name = "testHead",
                     Strength = 10,
                     Intelligence = 10,
                     Agility = 10,
-                    Category = CategoryEnum.Head,
+                    Category = "Head",
                     ImageURL = null,
                     Price = 500
                 });
             }
-            else if (displayCategory == CategoryEnum.Chest)
+            else if (displayCategory.Equals("Chest"))
             {
-                _equipmentCollection.Add(new Equipment
+                _equipmentCollection.Add(new NetNinjas.Equipment
                 {
                     Name = "testChest",
                     Strength = 0,
                     Intelligence = 10,
                     Agility = -10,
-                    Category = CategoryEnum.Head,
+                    Category = "Head",
                     ImageURL = null,
                     Price = 100
                 });
-                _equipmentCollection.Add(new Equipment
+                _equipmentCollection.Add(new NetNinjas.Equipment
                 {
                     Name = "Weighted Chest",
                     Strength = 44,
                     Intelligence = -44,
                     Agility = -22,
-                    Category = CategoryEnum.Head,
+                    Category = "Head",
                     ImageURL = null,
                     Price = 1000
                 });

@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight;
-using NetNinja.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ namespace NetNinja.ViewModel
 {
     public class EqpViewModel : ViewModelBase
     {
-        private Equipment _eqp;
+        private NetNinjas.Equipment _eqp;
         public string Naam
         {
             get { return _eqp.Name; }
@@ -19,26 +18,26 @@ namespace NetNinja.ViewModel
 
         public int Strength
         {
-            get { return _eqp.Strength; }
+            get { return  (int) _eqp.Strength; } //CAST MOETEN WE OPLOSSEN
             set { _eqp.Strength = value; RaisePropertyChanged("Strength"); }
         }
 
 
         public int Intelligence
         {
-            get { return _eqp.Intelligence; }
+            get { return (int) _eqp.Intelligence; }
             set { _eqp.Intelligence = value; RaisePropertyChanged("Intelligence"); }
         }
 
         public int Agility
         {
-            get { return _eqp.Agility; }
+            get { return (int) _eqp.Agility; }
             set { _eqp.Agility = value; RaisePropertyChanged("Agility"); }
         }
 
         public int Price
         {
-            get { return _eqp.Price; }
+            get { return (int) _eqp.Price; }
             set { _eqp.Price = value; RaisePropertyChanged("Price"); }
         }
 
@@ -49,20 +48,20 @@ namespace NetNinja.ViewModel
         }
 
 
-        internal CategoryEnum Category
+        public string Category
         {
             get { return _eqp.Category; }
             set { _eqp.Category = value; RaisePropertyChanged("Category"); }
         }
 
-        public EqpViewModel(Equipment eqp)
+        public EqpViewModel(NetNinjas.Equipment eqp)
         {
             this._eqp = eqp;
         }
 
         public EqpViewModel()
         {
-            this._eqp = new Equipment();
+            this._eqp = new NetNinjas.Equipment();
         }
     }
 }
