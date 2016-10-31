@@ -164,7 +164,7 @@ namespace NetNinja.ViewModel
             createWindow.Show();
         }
 
-        public Boolean CanBuy
+/*        public Boolean CanBuy
         {
             get { return _canBuy; }
             set
@@ -184,7 +184,7 @@ namespace NetNinja.ViewModel
                     RaisePropertyChanged("CanBuy");
                 }
             }
-        }
+        } */
 
         private bool CheckCanBuy()
         {
