@@ -24,9 +24,13 @@ namespace NetNinja.ViewModel
         private Equipment _ninjaChest;
         private Equipment _ninjaPants;
         private Equipment _ninjaBoots;
-        private string _name;
 
         //DATA BINDING FOR EQUIPMENTSET LABELS AND STUFF
+        private string _name;
+        private int _totStr;
+        private int _totInt;
+        private int _totAgl;
+        private int _totGold;
 
         public ObservableCollection<NetNinjas.Equipment> EquipmentSet
         {
@@ -74,7 +78,24 @@ namespace NetNinja.ViewModel
         {
             get { return _name; }
         }
-         
+
+        public int TotalStr
+        {
+            get { return _totStr; }
+        }
+        public int TotalInt
+        {
+            get { return _totInt; }
+        }
+        public int TotalAgl
+        {
+            get { return _totAgl; }
+        }
+        public int TotalGold
+        {
+            get { return _totGold; }
+        }
+
 
         public NinjaViewModel(Ninja ninja)
         {

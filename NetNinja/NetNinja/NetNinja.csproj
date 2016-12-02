@@ -82,6 +82,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ValueConverter\HeadModifierConverter.cs" />
     <Compile Include="ViewModel\EqpViewModel.cs" />
     <Compile Include="ViewModel\ItemCreateViewModel.cs" />
     <Compile Include="ViewModel\NewNinjaViewModel.cs" />
