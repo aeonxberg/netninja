@@ -151,10 +151,16 @@ namespace NetNinja.ViewModel
 
         private void OpenNinjaDisplay()
         {
-
-            NinjaWindow displayWindow = new NinjaWindow(); 
-            displayWindow.Show();           
-            Application.Current.Windows[0].Close();
+            if (SelectedNinja != null)
+            {
+                NinjaWindow displayWindow = new NinjaWindow();
+                displayWindow.Show();
+                Application.Current.Windows[0].Close();
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst een ninja!");
+            }
         }
 
         private void OpenItemCreator()
@@ -234,7 +240,6 @@ namespace NetNinja.ViewModel
 
         private void HeadBtnMethod()
         {
-            SelectedItem = null;
             displayCorrectItems("Head");
         }
 
