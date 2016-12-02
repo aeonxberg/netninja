@@ -188,33 +188,41 @@ namespace NetNinja.ViewModel
 
         private bool CheckCanBuy()
         {
+            bool _hasCategory = false;
+            if(SelectedItem == null || SelectedNinja == null)
+            {
+                return false;
+            }
             if(SelectedNinja.Gold< SelectedItem.Price)
             {
-                return true;
+                _hasCategory = true;
             }
-            bool _hasCategory = false;
-            using (var context = new NetNinjaDatabaseEntities())
+            else
             {
-                var _ninjas = context.Ninjas.Include(n => n.Equipments).ToList();
-
-                List<Equipment> equipment = null;
-                foreach (var item in _ninjas)
+                using (var context = new NetNinjaDatabaseEntities())
                 {
-                    if (item.Name.Equals(SelectedNinja.Name))
+                    var _ninjas = context.Ninjas.Include(n => n.Equipments).ToList();
+
+                    List<Equipment> equipment = null;
+                    foreach (var item in _ninjas)
                     {
-                        equipment = new List<Equipment>(item.Equipments);
+                        if (item.Name.Equals(SelectedNinja.Name))
+                        {
+                            equipment = new List<Equipment>(item.Equipments);
+                        }
                     }
-                }
 
-                foreach (var item in equipment)
-                {
-                    if (item.Category.Equals(SelectedItem.Category))
+                    foreach (var item in equipment)
                     {
-                        _hasCategory = true;
-                        break;
+                        if (item.Category.Equals(SelectedItem.Category))
+                        {
+                            _hasCategory = true;
+                            break;
+                        }
                     }
                 }
             }
+            
             return _hasCategory;
         }
 
@@ -226,6 +234,7 @@ namespace NetNinja.ViewModel
 
         private void HeadBtnMethod()
         {
+            SelectedItem = null;
             displayCorrectItems("Head");
         }
 
