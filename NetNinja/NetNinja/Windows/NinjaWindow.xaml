@@ -68,7 +68,7 @@
         <Label x:Name="TotInt" Content="{Binding TotalInt}" HorizontalAlignment="Left" Margin="45,343,0,0" VerticalAlignment="Top"/>
         <Label x:Name="TotAgl" Content="{Binding TotalAgl}" HorizontalAlignment="Left" Margin="45,369,0,0" VerticalAlignment="Top"/>
         <Label x:Name="TotGold" Content="{Binding TotalGold}" HorizontalAlignment="Left" Margin="49,393,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="BackButton" Command ="{Binding backCommand}" Content="Back" HorizontalAlignment="Left" Margin="529,7,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="BackButton" Command ="{Binding backCommand}" Content="Back" HorizontalAlignment="Left" Margin="529,0,0,405.2" VerticalAlignment="Bottom" Width="75"/>
 
 
     </Grid>

@@ -127,7 +127,7 @@ namespace NetNinja.ViewModel
              */
             Regex rgx = new Regex("^[0 - 9] +$");
 
-            if (createNewItem())
+            if (true)//(createNewItem())
             {
                 using (var context = new NetNinjas.NetNinjaDatabaseEntities())
                 {
